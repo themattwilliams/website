@@ -12,15 +12,17 @@ categories:
 image:
 ---
 
-# MCP: What It Is, Why It Matters — and Why Caution Is Warranted
+# MCP: what is it, why it matters, and why caution is warranted in 2025
 
-In late 2024, Anthropic introduced the **Model Context Protocol (MCP)** — a new way for AI agents to interact with tools and data through standardized interfaces.
+In late 2024, [Anthropic introduced](https://www.anthropic.com/news/model-context-protocol) the **Model Context Protocol (MCP)** — 
+a new way for AI agents to interact with tools and data through standardized interfaces.
 
 MCP has generated excitement across developer communities, especially for its promise to streamline how agents connect to external services.
 
-But it’s also sparked debate, including among API experts and platform engineers, about whether it’s mature or secure enough for wide adoption.
+But it’s also sparked debate, including among API experts and engineering leaders, about whether it’s mature or secure enough for wide adoption.
 
-In this post, we’ll explain what MCP does, where it’s useful, and where it falls short — especially for developers trying to build reliable, secure, AI-connected systems.
+In this post, we’ll explain what MCP does, where it’s useful, and where it falls short — especially for developers trying to build reliable and secure
+AI applications and systems.
 
 ---
 
@@ -30,15 +32,16 @@ Today’s AI agents are limited by how they interact with APIs and external tool
 
 Most integrations require custom code, brittle scripts, or predefined workflows.
 
-MCP proposes a general-purpose solution: a protocol that allows AI agents to “discover and invoke” tools exposed via a consistent JSON interface.
+MCP proposes a reusable approach for agent-tool interaction via a standard JSON 
+interface.
 
-In theory, MCP makes it easier to:
+MCP aims to make it easier to:
 
 - Expose internal tools to agents without custom wrappers  
 - Standardize how agents interact with APIs or file systems  
 - Create agent workflows that chain together multiple tools  
 
-This could reduce integration overhead and allow developers to plug new tools into agent systems more quickly.
+This reduces integration overhead and allow developers to plug new tools into agent systems faster.
 
 ## What's inside MCP?
 
@@ -48,23 +51,24 @@ At its core, MCP follows a **client-server architecture**:
 - The **MCP server** exposes tools or APIs in a consistent, machine-readable way.  
 - Communication happens over **JSON-RPC 2.0**, with calls like `read_file`, `run_tool`, etc.
 
-It’s **model-agnostic** and **open-source**, which makes it appealing to AI platforms trying to standardize their tool interface layer.
+MCP is **model-agnostic** and **open-source**, which makes it appealing to developers trying to standardize 
+their tool interface layer.
 
 ## The real-world reality of MCP
 
 Despite the appealing goals, some in the developer and API ecosystem remain cautious — and for good reason.
 
-### 1. Loose Specification
+### 1. Loose srructure with no formal governing body 
 
-MCP isn’t a formal protocol spec in the traditional sense.
+Well we first reviewed MCP, we noted that wasn't a formal protocol spec in the traditional sense. 
 
-Much of it lives in example code or GitHub discussions, which leads to confusion about implementation details.
+Many of the early discussions lived across example code and GitHub discussions, making it difficult to sort through. 
 
-There’s no governing body or RFC-like process defining behavior across edge cases.
+Additionally, it's important to note MCP's governance structure and standardization process is still evolving under 
+the leadership of Anthropic, and the future governance structure is uncertain.
 
-In its current state, it reads less like a protocol specification and more like a set of conventions.
 
-### 2. Overly Broad Permissions & Security Risks
+### 2. Permissions and security risk
 
 One major concern came to light in a [recent GitHub issue](https://github.com/modelcontext/protocol/issues/18),
 where a misconfigured MCP server exposed internal tools to broader access than intended.
@@ -75,7 +79,7 @@ Developers rushing to add MCP to their systems often don’t fully isolate or sa
 
 This creates a real risk, especially when AI agents are granted open-ended access to internal operations.
 
-### 3. Questionable Usefulness for Many Cases
+### 3. Questionable usefulness in many use cases
 
 In practice, over half of MCP tools today just expose documentation or basic static data.
 
@@ -104,11 +108,11 @@ for agents interacting with other agents.
 
 ## Should you use MCP today?
 
-We're hopeful to see MCP and other emerging protcols continue to mature as they're more widely adopted. 
+We're hopeful to see MCP and other emerging protocols continue to mature as they're more widely adopted. 
 
-And all things considered, if you're a developer working on AI agent infrastructure, MCP is promising.
+All things considered, if you're a developer working on AI agent infrastructure, MCP is promising.
 
-As with any emerging technology, spec, or protocol, it’s important to treat it with an **experimental** 
+As with any emerging technological development, it’s important to treat it with an **experimental** 
 mindset.
 
 MCP is still evolving, security practices are immature, and real-world value is still being proven
@@ -128,11 +132,9 @@ Before adopting it, we recommend developers:
 
 ## Final thoughts
 
-MCP is an ambitious attempt to rethink how AI agents interact with the world — and that’s worth exploring.
+MCP is an ambitious attempt to rethink how AI agents interact with the world, and that’s worth exploring.
 
-But right now, it’s better viewed as an **experimental playground** than a production-ready protocol.
-
-We encourage developers to test, share feedback, and improve the ecosystem — but go in with eyes open.
+We encourage developers to test, share feedback, and improve the ecosystem - and to go in with eyes open.
 
 ---
 
