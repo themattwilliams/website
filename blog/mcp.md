@@ -24,8 +24,6 @@ But it’s also sparked debate, including among API experts and engineering lead
 In this post, we’ll explain what MCP does, where it’s useful, and where it falls short — especially for developers trying to build reliable and secure
 AI applications and systems.
 
----
-
 ## What MCP is solving for
 
 Today’s AI agents are limited by how they interact with APIs and external tools.
@@ -66,7 +64,6 @@ Many of the early discussions lived across example code and GitHub discussions, 
 
 Additionally, it's important to note MCP's governance structure and standardization process is still evolving under 
 the leadership of Anthropic, and the future governance structure is uncertain.
-
 
 ### 2. Permissions and security risk
 
@@ -126,9 +123,7 @@ Before adopting it, we recommend developers:
 - **Read the full spec** ([modelcontextprotocol.io](https://modelcontextprotocol.io))  
 - **Review security boundaries carefully**  
 - **Don’t expose sensitive tools without strict permission controls**  
-- **Consider if OpenAPI or direct integrations would suffice**
-
----
+- **Consider if direct integrations are more practicale**
 
 ## Final thoughts
 
