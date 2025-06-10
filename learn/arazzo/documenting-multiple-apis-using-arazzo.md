@@ -752,14 +752,14 @@ Ready to transform your API documentation from static blueprints to complete arc
 1. **Learn from real examples**: Review the examples in this article, including the [Healthcare Patient Onboarding](#healthcare-patient-onboarding) workflow and [Technical Pattern-Based Examples](#technical-pattern-based-examples) sections above.
 2. **Create your first workflow**: Start with a simple, common use case that involves multiple API calls. Check out [Arazzo Basics](./arazzo-basics.md) for a gentle introduction.
 3. **Validate your workflow**: Use the Redocly CLI to lint and validate your Arazzo files. Learn more about [Success Criteria and Failure Handling](./success-criteria-and-failure-handling.md):
-```sh
-npx @redocly/cli@latest lint YOUR_ARAZZO_FILE
-```
+    ```sh
+    npx @redocly/cli@latest lint YOUR_ARAZZO_FILE
+    ```
 4. **Integrate with your documentation**: Store your Arazzo files alongside your OpenAPI specs. See [Source Descriptions and References](./source-descriptions-and-refs.md) for best practices.
 5. **Use Respect to run your workflows**: Execute your Arazzo workflows with Redocly CLI. For a complete walkthrough, see [Arazzo Walkthrough](./arazzo-walkthrough.md):
-```sh
-npx @redocly/cli@latest respect YOUR_ARAZZO_FILE
-```
+    ```sh
+    npx @redocly/cli@latest respect YOUR_ARAZZO_FILE
+    ```
 
 As you begin implementing Arazzo, remember that the most valuable workflows are those that reflect real-world usage patterns. Focus on documenting the journeys that matter most to your API consumers. This approach will yield immediate benefits in terms of comprehension, integration success, and overall API usability.
 
