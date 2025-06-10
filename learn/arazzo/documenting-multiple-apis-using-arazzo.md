@@ -2,7 +2,7 @@
 
 ## What is Arazzo?
 
-Arazzo is an OpenAPI specification designed specifically for expressing workflows and articulating functional use cases that span multiple APIs.
+Arazzo is an OpenAPI specification designed specifically for expressing workflows and articulating functional use cases that span multiple APIs. For a more detailed introduction, see [What is Arazzo?](./what-is-arazzo.md).
 
 Let's step back from software for a moment and think about physical architecture. Imagine you're an architect looking at a set of blueprints. Traditional API documentation is like having detailed drawings of each individual room in a building — you can see exactly how the kitchen is laid out, the dimensions of the bathroom, or where each electrical outlet is placed.
 
@@ -33,7 +33,7 @@ At Redocly, we view Arazzo as a game-changing development for API producers. As 
 
 ## Why to use Arazzo
 
-Continuing our architectural metaphor, consider what happens when a client commissions a building. They don't just want to know what each room looks like in isolation—they want to understand how the entire structure functions as a cohesive whole. How does foot traffic flow during a busy event? Where are the bottlenecks? How do service staff navigate from kitchen to dining areas efficiently?
+Continuing our architectural metaphor, consider what happens when a client commissions a building. They don't just want to know what each room looks like in isolation—they want to understand how the entire structure functions as a cohesive whole. How does foot traffic flow during a busy event? Where are the bottlenecks? How do service staff navigate from kitchen to dining areas efficiently? Learn more about [Why Arazzo Matters](./why-arazzo-matters.md).
 
 Arazzo addresses this fundamental gap by providing a standardized way to document workflows that use multiple APIs to achieve an outcome or complete a task. Until now, API producers have been like architects handing over individual room designs without circulation diagrams:
 
@@ -143,7 +143,7 @@ Internal benefits include:
 
 ### Arazzo descriptions
 
-Arazzo descriptions function like the circulation diagrams in an architectural plan. While the detailed room blueprints (OpenAPI specs) remain unchanged, Arazzo adds the critical layer that shows how people move through and use these spaces together.
+Arazzo descriptions function like the circulation diagrams in an architectural plan. While the detailed room blueprints (OpenAPI specs) remain unchanged, Arazzo adds the critical layer that shows how people move through and use these spaces together. For a deeper understanding of workflows and steps, see [Understanding Workflows and Steps](./understanding-workflows-and-steps.md).
 ```mermaid
 flowchart LR
     Title["Workflow Step Relationships and Data Flow"]:::title
@@ -379,7 +379,7 @@ Best practices for Arazzo descriptions include:
 
 ### Arazzo linting
 
-In architecture, building inspectors ensure that designs meet code requirements before construction begins. Similarly, Arazzo linting ensures your workflow documentation remains accurate and follows best practices before it reaches your API consumers.
+In architecture, building inspectors ensure that designs meet code requirements before construction begins. Similarly, Arazzo linting ensures your workflow documentation remains accurate and follows best practices before it reaches your API consumers. Learn more about [Linting Arazzo Workflows](./linting-arazzo-workflows.md).
 
 The Redocly CLI provides linting capabilities for Arazzo files, helping you:
 
@@ -721,7 +721,7 @@ These examples demonstrate how Arazzo can be used to document and implement both
 
 ### API contract testing
 
-There's a vast difference between checking that individual components meet specifications (like testing that a door closes properly) and verifying that the entire building functions as designed. Arazzo enables this holistic testing approach for your APIs.
+There's a vast difference between checking that individual components meet specifications (like testing that a door closes properly) and verifying that the entire building functions as designed. Arazzo enables this holistic testing approach for your APIs. For more details on testing, see [Testing Arazzo Workflows](./testing-arazzo-workflows.md).
 
 Redocly's internal tool (Respect) has long emphasized the importance of testing API workflows rather than just individual API calls. With Arazzo, this approach becomes standardized and accessible to all API producers.
 
@@ -749,14 +749,14 @@ For the latest updates on our Arazzo support, check out our [Arazzo roadmap blog
 
 Ready to transform your API documentation from static blueprints to complete architectural plans with circulation patterns? Here's how to get started:
 
-1. **Learn from real examples**: Explore the [Arazzo Specification repository](https://github.com/OAI/Arazzo-Specification/tree/main/examples/1.0.0).
-2. **Create your first workflow**: Start with a simple, common use case that involves multiple API calls.
-3. **Validate your workflow**: Use the Redocly CLI to lint and validate your Arazzo files:
+1. **Learn from real examples**: Review the examples in this article, including the [Healthcare Patient Onboarding](#healthcare-patient-onboarding) workflow and [Technical Pattern-Based Examples](#technical-pattern-based-examples) sections above.
+2. **Create your first workflow**: Start with a simple, common use case that involves multiple API calls. Check out [Arazzo Basics](./arazzo-basics.md) for a gentle introduction.
+3. **Validate your workflow**: Use the Redocly CLI to lint and validate your Arazzo files. Learn more about [Success Criteria and Failure Handling](./success-criteria-and-failure-handling.md):
 ```sh
 npx @redocly/cli@latest lint YOUR_ARAZZO_FILE
 ```
-4. **Integrate with your documentation**: Store your Arazzo files alongside your OpenAPI specs.
-5. **Use Respect to run your workflows**: Execute your Arazzo workflows with Redocly CLI:
+4. **Integrate with your documentation**: Store your Arazzo files alongside your OpenAPI specs. See [Source Descriptions and References](./source-descriptions-and-refs.md) for best practices.
+5. **Use Respect to run your workflows**: Execute your Arazzo workflows with Redocly CLI. For a complete walkthrough, see [Arazzo Walkthrough](./arazzo-walkthrough.md):
 ```sh
 npx @redocly/cli@latest respect YOUR_ARAZZO_FILE
 ```
