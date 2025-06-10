@@ -1,6 +1,6 @@
 # Document workflows for multiple APIs with Arazzo
 
-## **What is Arazzo?**
+## What is Arazzo?
 
 Arazzo is an OpenAPI specification designed specifically for expressing workflows and articulating functional use cases that span multiple APIs.
 
@@ -31,7 +31,7 @@ Arazzo emerged from a working group formed in 2021 under the OpenAPI Initiative.
 
 At Redocly, we view Arazzo as a game-changing development for API producers. As our CEO Adam Altman shared in our [Arazzo roadmap blog post](https://redocly.com/blog/arazzo-roadmap), this approach mirrors how we've been thinking about APIs for years. Our internal product Respect (which we've made available for use) has been using a similar philosophy to test API workflows rather than just endpoints. When we discovered the Arazzo project, we recognized an opportunity to contribute to a standardized approach for workflow documentation that would benefit the entire API ecosystem.
 
-## **Why to use Arazzo**
+## Why to use Arazzo
 
 Continuing our architectural metaphor, consider what happens when a client commissions a building. They don't just want to know what each room looks like in isolation—they want to understand how the entire structure functions as a cohesive whole. How does foot traffic flow during a busy event? Where are the bottlenecks? How do service staff navigate from kitchen to dining areas efficiently?
 
@@ -67,7 +67,7 @@ At Redocly, we've embraced this approach because it directly addresses two criti
 1. It reduces the potential for mismatch between documentation and implementation (ensuring the actual building matches ALL aspects of the design)  
 2. It ensures APIs are practical, runnable, testable, and monitorable from end to end (confirming people can actually move through the spaces as intended)
 
-## **How your APIs benefit from Arazzo**
+## How your APIs benefit from Arazzo
 
 In architecture, there's a world of difference between a building that looks good on paper and one that functions well in reality. Similarly, Arazzo transforms your API documentation from static blueprints into a living, functional guide.
 
@@ -82,7 +82,7 @@ flowchart LR
 
 Too often, well-intentioned API producers create excellent APIs but leave the burden of figuring out practical applications entirely to consumers. While internal teams might have unit tests for individual endpoints, that's fundamentally different from describing sequences of API calls across multiple services that achieve practical business outcomes — like testing that a door works versus confirming that the entire fire evacuation route functions as designed.
 
-### **External API benefits**
+### External API benefits
 
 For external APIs, Arazzo is providing a guided tour instead of just handing over the blueprints and wishing visitors good luck.
 
@@ -126,7 +126,7 @@ workflows: - workflowId: createAndUpdateUser
 
 ```
 
-### **Internal API benefits**
+### Internal API benefits
 
 For internal APIs, Arazzo serves as both blueprint and building inspector for your API ecosystem—ensuring not just that individual rooms are built to code, but that the entire structure functions as designed.
 
@@ -138,9 +138,9 @@ Internal benefits include:
 * Documenting dependencies between services that might not be obvious from individual API specs (like showing how HVAC, electrical, and plumbing systems interact)  
 * Providing clear examples for internal teams transitioning to new API versions or features (like updating staff on the new layout after a renovation)
 
-## **How Arazzo works**
+## How Arazzo works
 
-### **Arazzo descriptions**
+### Arazzo descriptions
 
 Arazzo descriptions function like the circulation diagrams in an architectural plan. While the detailed room blueprints (OpenAPI specs) remain unchanged, Arazzo adds the critical layer that shows how people move through and use these spaces together.
 ```mermaid
@@ -376,7 +376,7 @@ Best practices for Arazzo descriptions include:
 * Name all reusable objects in the components section as required by the specification
 * Apply criteria to component references when needed for conditional execution
 
-### **Arazzo linting**
+### Arazzo linting
 
 In architecture, building inspectors ensure that designs meet code requirements before construction begins. Similarly, Arazzo linting ensures your workflow documentation remains accurate and follows best practices before it reaches your API consumers.
 
@@ -387,7 +387,7 @@ The Redocly CLI provides linting capabilities for Arazzo files, helping you:
 * Verify that extracted variables are used correctly in subsequent steps (confirming logical progression between spaces)  
 * Maintain consistency across your workflow documentation (keeping the same standards throughout your building plans)
 
-## **Arazzo use cases and examples**
+## Arazzo use cases and examples
 
 ### Technical Pattern-Based Examples
 
@@ -718,7 +718,7 @@ These examples demonstrate how Arazzo can be used to document and implement both
 5. Success criteria and failure handling
 6. Real-world implementation patterns
 
-### **API contract testing**
+### API contract testing
 
 There's a vast difference between checking that individual components meet specifications (like testing that a door closes properly) and verifying that the entire building functions as designed. Arazzo enables this holistic testing approach for your APIs.
 
@@ -731,7 +731,7 @@ Contract testing with Arazzo allows you to:
 * Ensure that data flows correctly from one step to the next  
 * Detect breaking changes that might not be apparent from testing individual endpoints
 
-### **End-to-end API testing**
+### End-to-end API testing
 
 End-to-end testing with Arazzo goes beyond contract testing by validating complete user journeys in real-world scenarios. This approach is like conducting a full building simulation with actual users rather than just verifying plans meet code requirements.
 
@@ -744,7 +744,7 @@ With Arazzo-based end-to-end testing, you can:
 
 For the latest updates on our Arazzo support, check out our [Arazzo roadmap blog post](https://redocly.com/blog/arazzo-roadmap).
 
-## **Get started with Arazzo**
+## Get started with Arazzo
 
 Ready to transform your API documentation from static blueprints to complete architectural plans with circulation patterns? Here's how to get started:
 
