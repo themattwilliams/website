@@ -749,7 +749,7 @@ For the latest updates on our Arazzo support, check out our [Arazzo roadmap blog
 
 Ready to transform your API documentation from static blueprints to complete architectural plans with circulation patterns? Here's how to get started:
 
-1. **Learn from real examples**: Review the examples in this article, including the [Healthcare Patient Onboarding](#healthcare-patient-onboarding) workflow and [Technical Pattern-Based Examples](#technical-pattern-based-examples) sections above.
+1. **Learn from real examples**: Review the examples in this article, including the [Healthcare Patient Onboarding](#arazzo-descriptions) workflow and [Technical Pattern-Based Examples](#technical-pattern-based-examples) sections above.
 2. **Create your first workflow**: Start with a simple, common use case that involves multiple API calls. Check out [Arazzo Basics](./arazzo-basics.md) for a gentle introduction.
 3. **Validate your workflow**: Use the Redocly CLI to lint and validate your Arazzo files. Learn more about [Success Criteria and Failure Handling](./success-criteria-and-failure-handling.md):
     ```sh
