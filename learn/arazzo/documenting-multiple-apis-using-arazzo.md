@@ -94,7 +94,7 @@ Arazzo encourages more effective human integrations by:
 
 It also opens the door for more effective machine integrations, particularly for AI agents. As AI becomes more prevalent in development workflows, machine-readable documentation of what your API can accomplish (not just what endpoints exist) will become increasingly valuable.
 
-```
+```yaml
 workflows:
   - workflowId: createAndUpdateUser
     summary: Create a user and update their profile
