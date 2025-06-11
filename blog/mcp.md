@@ -5,12 +5,12 @@ description: Explore the pros and cons of Model Context Protocol (MCP), an emerg
 seo:
   title: "MCP: what is it, why it matters, and why caution is warranted in 2025"
   description: Explore the pros and cons of Model Context Protocol (MCP), an emerging standard for AI agent interaction.
-  image: ./images/2025-06-11-mcp-what-it-is-why-caution-matters.png
-author: "Redocly Team"
+  image: ./images/mcp-header.png
+author: adam-altman
 date: "2025-02-15"
 categories:
   - mcp
-image: 2025-06-11-mcp-what-it-is-why-caution-matters.png
+image: mcp-header.png
 ---
 
 # MCP: what is it, why it matters, and why caution is warranted in 2025
