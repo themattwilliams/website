@@ -124,7 +124,6 @@ workflows:
             phoneNumber: "555-123-4567"
         successCriteria:
           - condition: $statusCode == 200
-
 ```
 
 ### Internal API benefits
