@@ -1,31 +1,3 @@
-<!-- DEVELOPER NOTE: Add this Schema.org TechArticle markup to the <head> section when implementing this page -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "TechArticle",
-  "headline": "How to choose an API documentation tool",
-  "abstract": "A comprehensive guide for evaluating and selecting the right API documentation tool based on authoring, theming, publishing, and collaboration features.",
-  "author": {
-    "@type": "Organization",
-    "name": "Redocly"
-  },
-  "proficiencyLevel": "Intermediate",
-  "dependencies": "Basic familiarity with API concepts and OpenAPI Specification, understanding of organization's documentation requirements, knowledge of existing development workflow and tools",
-  "datePublished": "YYYY-MM-DD", /* Replace with actual publication date */
-  "dateModified": "YYYY-MM-DD", /* Replace with actual modification date */
-  "articleSection": "API Documentation",
-  "wordCount": /* Insert final word count */,
-  "audience": {
-    "@type": "Audience",
-    "audienceType": "API Developers, Technical Writers, Product Managers, CTOs"
-  },
-  "keywords": "API documentation, OpenAPI, documentation tools, developer experience, API reference, API portal, Redocly",
-  "url": "https://redocly.com/api-documentation-tool-choosing/"
-}
-</script>
-<!-- END Schema.org markup -->
-```
-
 # How to choose an API documentation tool
 
 In the competitive world of APIs, usable documentation can make the difference between enthusiastic adoption or frustrated abandonment. As APIs become more complex, selecting the right documentation tool is both a technical decision and a strategic investment in your product's success. Somewhat like choosing the right translator for an international business negotiation, your API documentation tool needs to accurately communicate your API's capabilities while creating as seamless an experience for developers as possible.
@@ -46,7 +18,7 @@ Great API documentation isn't just nice to have—it's often the difference betw
 Whether you're just starting your documentation journey or looking to upgrade your existing solution, this article will help you make an informed decision that balances immediate needs with long-term benefits.
 
 
-## Key Takeaways (for side panel)
+## Key Takeaways
 After reading this article, you will be able to:
 - [Explain the value of proper API documentation and why specialized tools are necessary](#why-an-api-documentation-tool)
 - [Evaluate documentation tools across four essential capability areas: authoring, theming, publishing, and collaboration](#features-to-consider-when-choosing-an-api-documentation-tool)
@@ -54,17 +26,6 @@ After reading this article, you will be able to:
 - [Make informed decisions about build-vs-buy for your documentation toolchain](#choosing-an-api-documentation-tool-you-dont-have-to-diy)
 - [Establish effective maintenance and update workflows for your API documentation](#publishing)
 - [Implement best practices for measuring the effectiveness of your documentation](#how-do-i-measure-the-effectiveness-of-my-api-documentation)
-
-## About This Guide (for side panel)
-This technical article provides a comprehensive framework for evaluating and selecting API documentation tools. It was created based on our experience with API developers, documentation specialists, and developer experience professionals to address the common challenges teams face when documenting their APIs.
-
-## Prerequisites (for side panel)
-Before diving into tool selection, you may benefit from having:
-- Basic familiarity with API concepts and [OpenAPI Specification](https://redocly.com/docs/cli/file-management)
-- Understanding of your organization's documentation requirements
-- Knowledge of your existing development workflow and tools
-
-**Proficiency Level**: Intermediate - This guide assumes familiarity with API development concepts but doesn't require expert knowledge of documentation systems.
 
 ## Why an API documentation tool?
 
@@ -140,7 +101,7 @@ requestBody:
 
 Advanced tools like Redocly's VS Code extension provide real-time validation and smart suggestions, making complex schema designs more manageable.
 
-As Lorna Mitchell from Redocly explains: "The hardest part of API design can be aligning your team on a set of rules and standards. If you're new to API linting, it can be especially difficult to know where to start, or which questions to ask."
+As Lorna Mitchell (on the openAPI committee) stated: "The hardest part of API design can be aligning your team on a set of rules and standards. If you're new to API linting, it can be especially difficult to know where to start, or which questions to ask."
 
 Look for tools that not only help you write documentation but also enforce standards and best practices.
 
@@ -165,28 +126,21 @@ A good API documentation tool should offer flexible theming options that let you
 For example, with [Redocly's theming capabilities](https://redocly.com/docs/realm/style/reference/css-variables/component), you can apply custom styling to specific elements using the built-in CSS variables and targeting actual rendered components:
 
 ```css
-/* Using CSS variables for consistent theming */
-:root {
-  --redocly-primary-color: #your-brand-color;
-  --redocly-border-radius: 8px;
-  --redocly-spacing: 16px;
-}
-
-/* Targeting actual Redocly components using attribute selectors */
+/* Example: Custom styling for API method labels */
 [data-testid="http-method"] {
-  color: var(--redocly-primary-color);
-  border-radius: var(--redocly-border-radius);
-  padding: var(--redocly-spacing);
+  color: var(--text-color-primary);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-xs) var(--spacing-sm);
   transition: all 0.2s ease;
 }
-
 [data-testid="http-method"]:hover {
-  background-color: var(--redocly-primary-color);
-  color: white;
+  color: var(--bg-color);
+  background-color: var(--text-color-primary);
+  box-shadow: var(--bg-raised-shadow);
   transform: translateY(-1px);
 }
 
-/* Styling code blocks and examples */
+/* Example: Custom styling for request/response examples */
 [data-component-name="CodeBlock"] {
   background-color: var(--panel-samples-code-block-bg-color);
   border: 1px solid var(--border-color-primary);
@@ -194,7 +148,7 @@ For example, with [Redocly's theming capabilities](https://redocly.com/docs/real
   padding: var(--spacing-md);
 }
 
-/* Customizing schema property styling */
+/* Example: Custom styling for schema property names */
 [class*="styled__PropertyName"] {
   color: var(--text-color-primary);
   font-family: var(--font-family-monospaced);
