@@ -31,6 +31,19 @@ After reading this article, you will be able to:
 
 Imagine building an elaborate machine but providing only a single-page instruction manual. No matter how powerful your API is, without comprehensive documentation, developers will struggle to harness its full potential. According to industry surveys, "accurate and detailed documentation" consistently ranks as one of the top factors influencing API adoption.
 
+```mermaid
+graph LR
+    A[Poor Documentation] --> B[Developer Frustration]
+    B --> C[High Support Tickets]
+    C --> D[Low API Adoption]
+    D --> E[Unsuccessful Product]
+    
+    F[Excellent Documentation] --> G[Developer Success]
+    G --> H[Quick Integration]
+    H --> I[High Adoption Rate]
+    I --> J[Product Success]
+```
+
 Good API documentation needs to cover:
 
 - **Your top API calls and what they do** - Like a well-organized menu at a restaurant, developers should quickly see what "dishes" your API offers
@@ -49,7 +62,7 @@ However, creating good API documentation goes far beyond simply annotating your 
 
 > **Industry Insight**: In our experience working with API teams, approximately 50% of all OpenAPI descriptions are generated directly from source code annotations. This makes robust Git and CI/CD integration crucial for maintaining documentation accuracy and consistency. The right tool should seamlessly handle both manually written and code-generated OpenAPI specifications.
 
-As Taylor Krusen at Redocly noted: "One of the hardest problems when building APIs is getting the API description started. Whether you're designing a brand new API or retrofitting an existing API into an OpenAPI description, staring at a blank canvas can feel daunting."
+As Taylor Krusen noted: "One of the hardest problems when building APIs is getting the API description started. Whether you're designing a brand new API or retrofitting an existing API into an OpenAPI description, staring at a blank canvas can feel daunting."
 
 The right documentation tool transforms this daunting task into a manageable, even enjoyable process.
 
@@ -236,6 +249,49 @@ Look for these publishing capabilities:
 
 > **Integration Tip**: Documentation that lives separately from your code inevitably becomes outdated. Prioritize tools that integrate with your existing CI/CD pipeline so documentation updates automatically with code changes.
 
+**Traditional Approach - Separate Documentation**
+
+```mermaid
+flowchart LR
+    A1[API Planning] --> B1[OpenAPI Spec]
+    B1 --> C1[Code Implementation]
+    C1 --> D1[Separate Documentation]
+    D1 --> E1[Manual Sync Issues]
+    E1 --> F1[Outdated Docs]
+    F1 --> G1[Developer Frustration]
+    
+    style A1 fill:#e3f2fd
+    style B1 fill:#e3f2fd
+    style C1 fill:#f3e5f5
+    style D1 fill:#ffcdd2
+    style E1 fill:#ffcdd2
+    style F1 fill:#ffcdd2
+    style G1 fill:#ffcdd2
+```
+
+**Modern Integrated Approach - Redocly**
+
+```mermaid
+flowchart LR
+    A2[API Planning] --> B2[OpenAPI Spec]
+    B2 --> C2[Code Implementation]
+    B2 --> D2[Redocly Documentation]
+    C2 --> E2[CI/CD Pipeline]
+    D2 --> E2
+    E2 --> F2[Automated Sync]
+    F2 --> G2[Always Current Docs]
+    G2 --> H2[Developer Success]
+    
+    style A2 fill:#e3f2fd
+    style B2 fill:#e3f2fd
+    style C2 fill:#f3e5f5
+    style D2 fill:#c8e6c9
+    style E2 fill:#c8e6c9
+    style F2 fill:#c8e6c9
+    style G2 fill:#c8e6c9
+    style H2 fill:#c8e6c9
+```
+
 A robust publishing process ensures that your documentation stays in sync with your API. For instance, using [Redocly CLI](https://redocly.com/docs/cli/commands/preview), you can preview documentation changes in real-time:
 
 ```bash
@@ -306,5 +362,3 @@ However, separate documentation becomes crucial when you make breaking changes o
 - [Using Redocly Tools for Better OpenAPI Development](https://redocly.com/blog/tame-openapi/)
 
 > **SEO Tip**: Enhance your documentation pages with [Schema.org TechArticle](https://schema.org/TechArticle) markup to improve search engine visibility and display rich results.
-
-
