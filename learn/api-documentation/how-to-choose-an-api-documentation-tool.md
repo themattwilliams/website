@@ -1,13 +1,51 @@
 # How to choose an API documentation tool
 
-In the competitive world of APIs, usable documentation can make the difference between enthusiastic adoption or frustrated abandonment. As APIs become more complex, selecting the right documentation tool is both a technical decision and a strategic investment in your product's success. Somewhat like choosing the right translator for an international business negotiation, your API documentation tool needs to accurately communicate your API's capabilities while creating as seamless an experience for developers as possible.
+In the competitive world of APIs, usable documentation can make the difference between enthusiastic adoption or frustrated abandonment.
 
-> **Strategy Tip**: Start your documentation tool selection by mapping your entire API lifecycle—from design to deprecation. The right tool should support each phase, not just the documentation itself. Consider who creates, reviews, and maintains documentation, as well as who consumes it.
+As APIs become more complex, selecting the right documentation tool is both a technical decision and a strategic investment in your product's success. Somewhat like choosing the right translator for an international business negotiation, your API documentation tool needs to accurately communicate your API's capabilities while creating as seamless an experience for developers as possible.
+
+## Documentation Tool Decision Factors
+```mermaid
+graph TD
+    A[API Lifecycle Mapping] --> B{Documentation Needs}
+    B --> C[Design Support]
+    B --> D[Development Integration]
+    B --> E[Review Workflows]
+    B --> F[Maintenance Tools]
+    
+    C --> C1[Collaborative Design]
+    C --> C2[Version Control]
+    
+    D --> D1[Code Integration]
+    D --> D2[CI/CD Pipeline]
+    
+    E --> E1[Review Process]
+    E --> E2[Approval Workflows]
+    
+    F --> F1[Update Mechanisms]
+    F --> F2[Deprecation Handling]
+    
+    style A fill:#e1f5fe
+    style B fill:#fff3e0
+    style C fill:#e8f5e8
+    style D fill:#f3e5f5
+    style E fill:#fff8e1
+    style F fill:#fce4ec
+    style C1 fill:#c8e6c9
+    style C2 fill:#c8e6c9
+    style D1 fill:#e1bee7
+    style D2 fill:#e1bee7
+    style E1 fill:#fff59d
+    style E2 fill:#fff59d
+    style F1 fill:#f8bbd9
+    style F2 fill:#f8bbd9
+```
 
 > **Platform Perspective**: Modern documentation solutions go beyond simple tools to provide integrated platforms that support the entire API lifecycle. For example, comprehensive platforms offer capabilities for discovery and governance, collaborative design, reference documentation generation, and developer onboarding—all working together as a unified system.
 
-## TLDR: What You'll Discover
-Great API documentation isn't just nice to have—it's often the difference between adoption and abandonment. In this guide, we explore how the right documentation tool can transform the developer experience while saving your team countless hours. You'll discover:
+
+## TL;DR: What You'll Discover
+Great API documentation is more than a nice to have and it's often the difference between adoption and abandonment. In this guide, we explore how the right documentation tool can improve the developer experience while saving your team time and effort. Let's explore:
 
 - Why specialized documentation tools dramatically outperform generic solutions for APIs
 - Four critical capability areas that separate adequate tools from exceptional ones
@@ -42,6 +80,17 @@ graph LR
     G --> H[Quick Integration]
     H --> I[High Adoption Rate]
     I --> J[Product Success]
+    
+    style A fill:#ffebee
+    style B fill:#ffcdd2
+    style C fill:#ef9a9a
+    style D fill:#e57373
+    style E fill:#f44336
+    style F fill:#e8f5e8
+    style G fill:#c8e6c9
+    style H fill:#a5d6a7
+    style I fill:#81c784
+    style J fill:#4caf50
 ```
 
 Good API documentation needs to cover:
@@ -174,7 +223,7 @@ These variables automatically adapt to light and dark modes, ensuring consistent
 
 When customizing Redocly documentation, there are several effective approaches:
 
-**1. Using CSS Variables (Recommended)**
+**1. Using CSS Variables**
 Redocly provides a comprehensive set of CSS variables that you can override to maintain consistency:
 
 ```css
@@ -212,8 +261,6 @@ Use browser developer tools to identify the actual selectors for components you 
 For more advanced customization, Redocly supports theme configuration files that provide structured theming options without requiring custom CSS.
 
 > **Best Practice**: Start with CSS variables for basic theming, then use component-specific selectors for targeted customizations. Always test your styles across different browsers and devices to ensure consistency.
-
-> **Styling Tip**: When customizing Redocly documentation, use browser developer tools to inspect the actual rendered elements. Look for `data-testid`, `data-component-name`, or class attributes that contain component names. This approach ensures your CSS targets real elements rather than hypothetical class names.
 
 ### Brand-consistent components
 
