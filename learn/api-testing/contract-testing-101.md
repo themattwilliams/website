@@ -159,20 +159,21 @@ By understanding these challenges and implementing the right strategies and tool
 
 ## API Contract Testing with Arazzo
 
-Arazzo is an OpenAPI specification for testing workflows across APIs. It provides a standardized way to document and validate API interactions.
+[Arazzo](/learn/arazzo/what-is-arazzo.md) is an OpenAPI specification for testing workflows across APIs. It provides a standardized way to document and validate API interactions.
 
 ![Arazzo Contract Testing](images/arazzo-contract-testing.png)
 
-
-* You can use it to document workflows in a machine-readable format
+* You can use it to [document workflows in a machine-readable format](/learn/arazzo/documenting-api-workflows.md) and [understand how workflows and steps work together](/learn/arazzo/understanding-workflows-and-steps.md)
 * These workflows can then be run, tested, and monitored with tools like [Redocly's Respect](https://redocly.com/respect)
 * Arazzo enables consistent testing approaches across different API types and environments
 
-Redocly Respect is an API contract testing system based on OpenAPI's Arazzo. Respect sends API requests to an API server and validates that the response matches the expectations described in the OpenAPI description and in the Arazzo file. This ensures that your APIs function as expected by validating:
+Redocly Respect is an API contract testing system based on OpenAPI's Arazzo. Respect sends API requests to an API server and validates that the response matches the expectations described in the [OpenAPI description](/learn/openapi/ref-guide.md) and in the Arazzo file. This ensures that your APIs function as expected by validating:
 
 * Status codes
 * Content types
 * Response schemas against their OpenAPI descriptions
+
+For teams working with complex APIs, consider using [multi-file OpenAPI definitions](/learn/openapi/multi-file-definitions.md) to organize your API contracts effectively.
 
 ## Getting Started with Contract Testing
 
