@@ -1,5 +1,5 @@
 ---
-slug: /docs/cli/v2/rules/oas/no-path-trailing-slash
+slug: /docs/cli/rules/oas/no-path-trailing-slash
 ---
 
 # no-path-trailing-slash
@@ -11,6 +11,7 @@ Ensures that paths in your API do not end with a trailing slash (`/`).
 | 2.0 | ✅            |
 | 3.0 | ✅            |
 | 3.1 | ✅            |
+| 3.2 | ✅            |
 
 ## API design principles
 

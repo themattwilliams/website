@@ -1,4 +1,20 @@
+---
+products:
+  - Realm
+  - Redoc
+  - Revel
+  - Reef
+  - Redocly CLI
+plans:
+  - Community
+  - Pro
+  - Enterprise
+  - Enterprise+
+description: Configure how to resolve URLs referenced from API descriptions.
+---
 # `resolve`
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 ## Introduction
 
@@ -21,7 +37,8 @@ One HTTP header is supported for each URL resolved.
 
 - doNotResolveExamples
 - boolean
-- When running `lint`, set this option to `true` to avoid resolving `$ref` fields in examples. Resolving `$ref`s in other parts of the API is unaffected.
+- When running `lint`, set this option to `true` to avoid resolving `$ref` fields in examples.
+  Resolving `$ref`s in other parts of the API is unaffected.
 
 ---
 
@@ -49,19 +66,22 @@ One HTTP header is supported for each URL resolved.
 
 - name
 - string
-- **REQUIRED**. The header name, for example `Authorization`.
+- **REQUIRED**.
+  The header name, for example `Authorization`.
 
 ---
 
 - value
 - string
-- The value to send for the header. Only one of `value` or `envVariable` can be used; `envVariable` is recommended for any secrets.
+- The value to send for the header.
+  Only one of `value` or `envVariable` can be used; `envVariable` is recommended for any secrets.
 
 ---
 
 - envVariable
 - string
-- The name of the environment variable that contains the value to send for the header. Only one of `value` or `envVariable` can be used; `envVariable` is recommended for any secrets.
+- The name of the environment variable that contains the value to send for the header.
+  Only one of `value` or `envVariable` can be used; `envVariable` is recommended for any secrets.
 
 {% /table %}
 
@@ -86,5 +106,5 @@ When the OpenAPI description references a URL that matches these patterns, it is
 
 ## Resources
 
-- [How to use `$ref` in OpenAPI](https://redocly.com/docs/resources/ref-guide/).
-- Explore other [configuration options](../index.md) for your project.
+- **[How to use $ref in OpenAPI](https://redocly.com/docs/resources/ref-guide/)** - Complete guide to using references in OpenAPI specifications for better organization and reusability
+- **[Configuration options](../index.md)** - Explore other project configuration options for comprehensive documentation customization

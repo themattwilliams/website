@@ -1,4 +1,18 @@
+---
+products:
+  - Redoc
+  - Revel
+  - Realm
+plans:
+  - Community
+  - Pro
+  - Enterprise
+  - Enterprise+
+description: Configure linting rules and their severity.
+---
 # `rules`
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 ## Introduction
 
@@ -18,7 +32,9 @@ The `rules` block can be used at the root of a configuration file, or inside an 
 
 - {rule name}
 - [Rule object](#rule-object)
-- **REQUIRED**. Add as many rule entries as you like. These keys must be built-in rules (for example `security-defined`), configurable rules that you declare here (for example `rule/my-custom-rule`), or a rule from a plugin (for example `my-plugin/add-awesome`).
+- **REQUIRED**.
+  Add as many rule entries as you like.
+  These keys must be built-in rules (for example `security-defined`), configurable rules that you declare here (for example `rule/my-custom-rule`), or a rule from a plugin (for example `my-plugin/add-awesome`).
 
 {% /table %}
 
@@ -34,7 +50,8 @@ The `rules` block can be used at the root of a configuration file, or inside an 
 
 - severity
 - string
-- Severity level of this rule. Must be one of `error`, `warn`, or `off`.
+- Severity level of this rule.
+  Must be one of `error`, `warn`, or `off`.
 
 ---
 
@@ -42,13 +59,15 @@ The `rules` block can be used at the root of a configuration file, or inside an 
 - string
 - Optional custom message for this rule.
   Example: `My Error Description. {{message}}`.
-  The {{message}} placeholder renders with the default error message for the rule. Include the {{message}} placeholder if you want to provide the user with your custom message as well as the default error message for the rule.
+  The {{message}} placeholder renders with the default error message for the rule.
+  Include the {{message}} placeholder if you want to provide the user with your custom message as well as the default error message for the rule.
 
 ---
 
 - {additional properties}
 - any
-- Some rules allow additional configuration, check the details of each rule to find out the values that can be supplied here. For example the [`boolean-parameter-prefixes` rule](https://redocly.com/docs/cli/rules/oas/boolean-parameter-prefixes) supports an additional option of `prefixes` that accepts an array of strings.
+- Some rules allow additional configuration, check the details of each rule to find out the values that can be supplied here.
+  For example the [`boolean-parameter-prefixes` rule](https://redocly.com/docs/cli/rules/oas/boolean-parameter-prefixes) supports an additional option of `prefixes` that accepts an array of strings.
 
 {% /table %}
 
@@ -126,9 +145,9 @@ The example includes an example of including the plugin in your configuration.
 
 ## Resources
 
-- [apis](./apis.md) configuration options allow setting per-API configuration in `redocly.yaml`.
-- [decorators](./openapi/decorators.md) offer some transformations for your OpenAPI documents.
-- The [Redocly CLI cookbook](https://github.com/Redocly/redocly-cli-cookbook) is a great resource for configurable rules, plugins, and other examples.
-- Learn more about [rules](https://redocly.com/docs/cli/rules) overall.
-- Read the [documentation for configurable rules](https://redocly.com/docs/cli/rules/configurable-rules).
-- Explore other [configuration options](./index.md) for your project.
+- **[APIs configuration](./apis.md)** - Set per-API configuration options in redocly.yaml for granular control over different API specifications
+- **[Decorators](./openapi/decorators.md)** - Apply transformations to your OpenAPI documents for enhanced functionality and customization
+- **[Redocly CLI cookbook](https://github.com/Redocly/redocly-cli-cookbook)** - Comprehensive resource for configurable rules, plugins, and practical implementation examples
+- **[Rules documentation](https://redocly.com/docs/cli/rules)** - Complete guide to understanding and implementing linting rules for API documentation quality
+- **[Configurable rules documentation](https://redocly.com/docs/cli/rules/configurable-rules)** - Detailed documentation for customizing and configuring rule behavior
+- **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization

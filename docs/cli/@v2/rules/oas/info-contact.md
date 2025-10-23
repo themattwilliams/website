@@ -1,5 +1,5 @@
 ---
-slug: /docs/cli/v2/rules/oas/info-contact
+slug: /docs/cli/rules/oas/info-contact
 ---
 
 # info-contact
@@ -11,6 +11,7 @@ Requires the `Contact` info object defined in your API.
 | 2.0 | ✅            |
 | 3.0 | ✅            |
 | 3.1 | ✅            |
+| 3.2 | ✅            |
 
 ```mermaid
 flowchart TD
@@ -72,7 +73,7 @@ info:
 ## Related rules
 
 - [info-license](./info-license.md)
-- [info-license-url](./info-license-url.md)
+- [info-license-strict](./info-license-strict.md)
 - [struct](../common/struct.md)
 - [configurable rules](../configurable-rules.md)
 

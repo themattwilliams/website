@@ -1,13 +1,27 @@
+---
+products:
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+description: Configure custom plugins to extend lint and decorator behavior.
+---
 # `plugins`
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 ## Introduction
 
-Redocly supports [custom plugins](https://redocly.com/docs/cli/custom-plugins) for extending lint and decorator behavior.
+{% $frontmatter.description %}
 Use plugins when you need to add rules beyond the [built-in](https://redocly.com/docs/cli/rules/built-in-rules) and [configurable](https://redocly.com/docs/cli/rules/configurable-rules), or decorators beyond the [built-in decorators](https://redocly.com/docs/cli/decorators).
+For implementation guidance, see [custom plugins](https://redocly.com/docs/cli/custom-plugins).
 
 ## Options
 
-The `plugins` configuration is an array of paths to plugin files, relative to the config file.
+The `plugins` configuration is a list of paths to plugin files, relative to the config file.
 You can include as many plugins as you need.
 
 ## Examples
@@ -24,8 +38,8 @@ Remember that you need to include plugins in the `plugins` section before you ca
 
 ## Resources
 
-- [apis](./apis.md) configuration options allow setting per-API configuration in `redocly.yaml`.
-- [rules](./rules.md) settings define the linting rules that are used.
-- [decorators](./openapi/decorators.md) offer some transformations for your OpenAPI documents.
-- The [Redocly CLI cookbook](https://redocly.com/blog/redocly-cli-cookbook/) has many examples of plugins.
-- Explore other [configuration options](./index.md) for your project.
+- **[APIs configuration](./apis.md)** - Set per-API configuration options in redocly.yaml for customized plugin behavior across different API specifications
+- **[Rules configuration](./rules.md)** - Define linting rules that work with plugins for comprehensive API validation and quality enforcement
+- **[Decorators](./openapi/decorators.md)** - Apply transformations to your OpenAPI documents for enhanced functionality when used with plugins
+- **[Redocly CLI cookbook](https://redocly.com/blog/redocly-cli-cookbook/)** - Find many practical examples of plugins and their implementation in real-world scenarios
+- **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization

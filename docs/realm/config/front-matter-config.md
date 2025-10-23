@@ -23,7 +23,12 @@ These options are available exclusively in front matter:
 - boolean
 - Exclude the page from search results and from `llms.txt` file when set to `true`.
   Default: `false`.
-  
+
+  {% admonition type="info" %}
+  Search indexes are only built on the production branch.
+  Changes to `excludeFromSearch` may not immediately appear in search results until the next production build.
+  {% /admonition %}
+
   To exclude OpenAPI description files from search, see: [`openapi` configuration](./openapi/index.md).
 
 ---
@@ -35,7 +40,7 @@ These options are available exclusively in front matter:
 ---
 
 - slug
-- string or [string]
+- string | [string]
 - Custom URL path for this page, instead of the default path based on folder and file names.
   Define multiple slugs to make content available at multiple URLs.
   Slugs can contain multiple segments (e.g., '/custom-pages/page-1').
@@ -47,7 +52,7 @@ These options are available exclusively in front matter:
 - Path to a custom template for the Markdown page.
   Omit file extensions.
   Use relative paths for local templates and absolute paths for templates from node modules.
-  See [Override a page template](../style/how-to/custom-page-templates.md) for details.
+  See [Override a page template](../customization/custom-page-templates.md) for details.
 
 ---
 
@@ -120,9 +125,10 @@ When defined in front matter, they override the global configuration:
 ---
 
 - rbac
-- [team to role map](./rbac.md#team-to-role-map)
-- Set access permissions for the page. This option can contain only the map of teams to roles.
-  
+- [Map[string, string]](./rbac.md#team-to-role-map)
+- Map of teams to roles.
+  Set access permissions for the page.
+
 ---
 
 - [search](./search.md)
@@ -197,6 +203,6 @@ Use `redocly.yaml` for most configuration settings and use front matter only for
 
 ## Resources
 
-- [Override a page template](../style/how-to/custom-page-templates.md)
-- [Configure Redocly](./index.md) using the `redocly.yaml` file.
-- [Block search indexing](../setup/how-to/block-search-index.md) using the `noindex` rule.
+- **[Override a page template](../customization/custom-page-templates.md)** - Create custom page templates to override default layouts and implement unique page designs
+- **[Configure Redocly](./index.md)** - Complete configuration reference for the redocly.yaml file and project settings
+- **[Block search indexing](./seo.md#control-search-indexing)** - Use the noindex rule in front matter to control search engine indexing on specific pages

@@ -1,5 +1,5 @@
 ---
-slug: /docs/cli/v2/rules/oas/operation-tag-defined
+slug: /docs/cli/rules/oas/operation-tag-defined
 ---
 
 # operation-tag-defined
@@ -11,6 +11,7 @@ Disallows use of tags in operations that aren't globally defined.
 | 2.0 | ✅            |
 | 3.0 | ✅            |
 | 3.1 | ✅            |
+| 3.2 | ✅            |
 
 ## API design principles
 

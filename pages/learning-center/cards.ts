@@ -1,10 +1,8 @@
 import openApiThumbnail from './images/open-api-thumbnail.svg';
 import markdocThumbnail from './images/markdoc-thumbnail.svg';
 import yamlThumbnail from './images/yaml-thumbnail.svg';
-import apiGovernanceThumbnail from './images/api-governance-thumbnail.svg';
 import apiTestingThumbnail from './images/api-testing-thumbnail.svg';
 import apiSecurityThumbnail from './images/api-security-thumbnail.svg';
-import graphqlThumbnail from './images/graphql-thumbnail.svg';
 import arazzoThumbnail from './images/arazzo-thumbnail.svg';
 
 export const cards = [
@@ -84,38 +82,37 @@ export const cards = [
   //     { title: 'Best Practices for API Standards', link: '' },
   //   ],
   // },
-  // {
-  //   id: 6,
-  //   key: 'api-testing',
-  //   title: 'API Testing',
-  //   description:
-  //     'Discover essential resources for mastering API testing, including tools, techniques, and best practices for reliable integrations.',
-  //   thumbnail: apiTestingThumbnail,
-  //   moreItems: ' more topics',
-  //   landingPage: '/',
-  //   items: [
-  //     { title: 'Introduction to API Testing', link: '' },
-  //     { title: 'Tools for API Testing', link: '' },
-  //     { title: 'Creating Effective Test Cases', link: '' },
-  //     { title: 'API Testing Best Practices ', link: '' },
-  //   ],
-  // },
-  // {
-  //   id: 7,
-  //   key: 'api-security',
-  //   title: 'API Security',
-  //   description:
-  //     'Gain insights into securing your APIs with essential resources, tools, and best practices to protect your applications.',
-  //   thumbnail: apiSecurityThumbnail,
-  //   moreItems: ' more topics',
-  //   landingPage: '/',
-  //   items: [
-  //     { title: 'Introduction to API Security', link: '' },
-  //     { title: 'Common API Vulnerabilities', link: '' },
-  //     { title: 'Implementing Authentication and Authorization examples', link: '' },
-  //     { title: 'Best Practices for Securing APIs', link: '' },
-  //   ],
-  // },
+  {
+    id: 5,
+    key: 'api-testing',
+    title: 'API Testing',
+    description:
+      'Master API testing fundamentals with tools, techniques, and best practices.',
+    thumbnail: apiTestingThumbnail,
+    moreItems: '1 more topic',
+    landingPage: '/learn/testing',
+    items: [
+      { title: 'Contract Testing 101', link: '/learn/testing/contract-testing-101' },
+      { title: 'Tools for API Testing in 2025', link: '/learn/testing/tools-for-api-testing-in-2025' },
+    ],
+  },
+  {
+    id: 6,
+    key: 'api-security',
+    title: 'API Security',
+    description:
+      'Gain insights into securing your APIs with essential resources, tools, and best practices to protect your applications.',
+    thumbnail: apiSecurityThumbnail,
+    moreItems: '2 more topics',
+    landingPage: '/learn/security',
+    items: [
+      { title: 'API Security by Design: Complete Guide', link: '/learn/security' },
+      { title: 'API TLS Encryption and HTTPS Best Practices', link: '/learn/security/api-tls-encryption-https-best-practices' },
+      { title: 'API Input Validation and Injection Prevention', link: '/learn/security/api-input-validation-injection-prevention' },
+      { title: 'API Rate Limiting and Abuse Prevention', link: '/learn/security/api-rate-limiting-abuse-prevention' },
+      { title: 'Authentication and Authorization with OpenAPI', link: '/learn/security/authentication-authorization-openapi' },
+    ],
+  },
   // {
   //   id: 8,
   //   key: 'graphql',

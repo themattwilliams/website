@@ -1,5 +1,5 @@
 ---
-slug: /docs/cli/v2/rules/oas/response-contains-header
+slug: /docs/cli/rules/oas/response-contains-header
 ---
 
 # response-contains-header
@@ -11,6 +11,7 @@ Requires that response objects with specific HTTP status codes or ranges contain
 | 2.0 | ✅            |
 | 3.0 | ✅            |
 | 3.1 | ✅            |
+| 3.2 | ✅            |
 
 ## API design principles
 

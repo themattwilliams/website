@@ -7,8 +7,11 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: Customize behavior and appearance of pages rendered from Markdown files.
 ---
 # `markdown`
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 The `markdown` settings are used to customize the behavior and appearance of pages that render from Markdown files.
 
@@ -24,13 +27,15 @@ The `markdown` settings are used to customize the behavior and appearance of pag
 
 - frontMatterKeysToResolve
 - [string]
-- An array where each entry is a front matter key to resolve at build time. By default, values for `image` and `links` are resolved.
+- A list where each entry is a front matter key to resolve at build time.
+  By default, values for `image` and `links` are resolved.
 
 ---
 
 - partialsFolders
 - [string]
-- An array of directory paths to folders used for storing partials. The `_partials` folder works by default, but all other folders must be listed in `partialsFolder` in order to work with partials.
+- A list of directory paths to folders used for storing partials.
+  The `_partials` folder works by default, but all other folders must be listed in `partialsFolder` in order to work with partials.
 
 ---
 
@@ -50,7 +55,8 @@ The `markdown` settings are used to customize the behavior and appearance of pag
 
 - editPage
 - [Edit page object](#edit-page-object)
-- Toggle the appearance of an **edit page** button. When clicked, users are directed to the public GitHub repo for the current page.
+- Toggle the appearance of an **edit page** button.
+  When clicked, users are directed to the public GitHub repo for the current page.
 {% partial file="../_partials/config/_supported-config.md" variables={"optionName": "editPage"} /%}
 
 {% /table %}
@@ -67,19 +73,24 @@ The `markdown` settings are used to customize the behavior and appearance of pag
 
 - format
 - string
-- Specifies the format of the last updated time displayed. Possible values: `iso`, `short`, `long`, or `timeago`. Default value: `timeago`.
+- Specifies the format of the last updated time displayed.
+  Possible values: `iso`, `short`, `long`, or `timeago`.
+  Default value: `timeago`.
 
 ---
 
 - locale
 - string
-- Locale of the date. Works with [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639-1) country codes. Default value: `en-US`.
+- Locale of the date.
+  Works with [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639-1) country codes.
+  Default value: `en-US`.
 
 ---
 
 - hide
 - boolean
-- Control the visibility of the last updated time. Default value: `false`.
+- Control the visibility of the last updated time.
+  Default value: `false`.
 
 {% /table %}
 
@@ -95,19 +106,22 @@ The `markdown` settings are used to customize the behavior and appearance of pag
 
 - header
 - string
-- Configure the heading of the table of contents. Default value: `On this page`.
+- Configure the heading of the table of contents.
+  Default value: `On this page`.
 
 ---
 
 - depth
 - integer
-- Set the maximum depth of the heading displayed in the table of contents. Default value: `3` Minimum value: `1`.
+- Set the maximum depth of the heading displayed in the table of contents.
+  Default value: `3` Minimum value: `1`.
 
 ---
 
 - hide
 - boolean
-- Control the visibility of the table of contents. Default value: `false`.
+- Control the visibility of the table of contents.
+  Default value: `false`.
 
 {% /table %}
 
@@ -123,13 +137,15 @@ The `markdown` settings are used to customize the behavior and appearance of pag
 
 - baseUrl
 - string
-- Set the base URL that the page's path is appended to. The link should direct users somewhere to submit an edit, for example a public GitHub repo.
+- Set the base URL that the page's path is appended to.
+  The link should direct users somewhere to submit an edit, for example a public GitHub repo.
 
 ---
 
 - hide
 - boolean
-- Control the visibility of the edit page button. Default value: `true`.
+- Control the visibility of the edit page button.
+  Default value: `true`.
 
 {% /table %}
 
@@ -172,9 +188,9 @@ Amazing markdown content...
 
 ```
 
-## Related options
+## Resources
 
-- Configure page [breadcrumbs](./breadcrumbs.md)
-- Configure [links](./links.md)
-- Use [front matter](./front-matter-config.md) to configure some of the Markdown options on individual pages.
-- Explore other [configuration options](./index.md) for your project.
+- **[Breadcrumbs configuration](./breadcrumbs.md)** - Configure page breadcrumbs to improve navigation and user orientation within your documentation
+- **[Links configuration](./links.md)** - Configure link behavior and styling for consistent navigation and external link handling
+- **[Front matter configuration](./front-matter-config.md)** - Use front matter to configure Markdown options on individual pages for granular control
+- **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation customization

@@ -1,5 +1,5 @@
 ---
-slug: /docs/cli/v2/rules/oas/operation-summary
+slug: /docs/cli/rules/oas/operation-summary
 ---
 
 # operation-summary
@@ -11,6 +11,7 @@ Enforce that every operation has a summary.
 | 2.0 | ✅            |
 | 3.0 | ✅            |
 | 3.1 | ✅            |
+| 3.2 | ✅            |
 
 ## API design principles
 

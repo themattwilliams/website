@@ -1,5 +1,5 @@
 ---
-slug: /docs/cli/rules/oas/no-ambiguous-paths
+slug: /docs/cli/v1/rules/oas/no-ambiguous-paths
 ---
 
 # no-ambiguous-paths
@@ -28,9 +28,9 @@ According to the OpenAPI specification:
 ```mermaid
 flowchart TD
 
-root ==> Paths
+Root ==> Paths
 
-root ==> components
+Root ==> components
 
 style Paths fill:#codaf9,stroke:#0044d4,stroke-width:5px
 ```

@@ -549,6 +549,9 @@
 
     --card-icon-color: var(--color-blue-7);
     --hover-last-navbar-color: linear-gradient(125deg, #E0EDFF 7.23%, #F1EBFF 99.14%);
+
+    /* Ask AI Button */
+    --ai-assistant-button-z-index: 11; /* Above the footer */ 
 }
 
 :root.dark {
@@ -566,6 +569,10 @@
     --color-ontonal: #2A2B33;
     --color-arrow: #9B9CA8;
     --hover-last-navbar-color: #3B3C45;
+    
+    [data-component-name="Menu/MenuItem"] img  {
+        filter: invert(1); /* invert the color of the icon not to mess with srcSet */
+    }
 }
 
 :root.dark nav img {
@@ -753,3 +760,11 @@ tr td:first-child code {
     }
     --card-icon-color: red;
 } */
+ 
+.mermaid-wrapper {
+    margin: 1em 0;
+}
+
+.mermaid {
+    text-align: center;
+}

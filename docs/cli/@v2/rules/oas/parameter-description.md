@@ -1,5 +1,5 @@
 ---
-slug: /docs/cli/v2/rules/oas/parameter-description
+slug: /docs/cli/rules/oas/parameter-description
 ---
 
 # parameter-description
@@ -11,6 +11,7 @@ Ensure that every parameter has a description.
 | 2.0 | ✅            |
 | 3.0 | ✅            |
 | 3.1 | ✅            |
+| 3.2 | ✅            |
 
 ## API design principles
 

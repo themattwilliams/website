@@ -1,5 +1,5 @@
 ---
-slug: /docs/cli/v2/rules/oas/no-unused-components
+slug: /docs/cli/rules/oas/no-unused-components
 ---
 
 # no-unused-components
@@ -12,6 +12,7 @@ In this context, "used" means that a component defined in the `components` objec
 | 2.0 | ❌            |
 | 3.0 | ✅            |
 | 3.1 | ✅            |
+| 3.2 | ✅            |
 
 ```mermaid
 flowchart TD

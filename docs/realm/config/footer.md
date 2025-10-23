@@ -8,9 +8,13 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: Customize the footer for the pages in your project.
 ---
 # `footer`
 
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
+
+Customize the footer for the pages in your project.
 The footer is a section at the bottom of your documentation that contains copyright information, links, or other elements you want available on every page.
 
 ## Options
@@ -62,19 +66,21 @@ The default footer included in `@redocly/theme` can be configured using the opti
 
 - group
 - string
-- **REQUIRED.** Specifies the name of the column.
+- **REQUIRED.**
+  Specifies the name of the column.
 
 ---
 
 - groupTranslationKey
 - string
-- Specifies the translation key for the column name used for [localization](../author/how-to/config-l10n/localize-labels.md#localize-user-defined-ui-elements).
+- Specifies the translation key for the column name used for [localization](../content/localization/localize-labels.md#localize-user-defined-ui-elements).
 
 ---
 
 - items
 - [Item](#item-object)
-- **REQUIRED.** List of items in the footer column.
+- **REQUIRED.**
+  List of items in the footer column.
 
 {% /table %}
 
@@ -91,14 +97,19 @@ The default footer included in `@redocly/theme` can be configured using the opti
 - page
 - string
 -
-  **CONDITIONALLY REQUIRED.**\* Path to the file (extension included) that represents the page to link to. If no `label` is provided, the link text matches _the page's level 1 heading_.
+  **CONDITIONALLY REQUIRED.**\*
+  Path to the file (extension included) that represents the page to link to.
+  If no `label` is provided, the link text matches _the page's level 1 heading_.
 
 ---
 
 - href
 - string
 -
-  **CONDITIONALLY REQUIRED.**\* URL to link to. Works with absolute and relative URLs. If no `label` is provided, the link text matches _the value used for href_.
+  **CONDITIONALLY REQUIRED.**\*
+  URL to link to.
+  Works with absolute and relative URLs.
+  If no `label` is provided, the link text matches _the value used for href_.
 
 ---
 
@@ -110,7 +121,8 @@ The default footer included in `@redocly/theme` can be configured using the opti
 
 - labelTranslationKey
 - string
-- Sets the translation key for an item's link text. Used for [localization](../author/how-to/config-l10n/localize-labels.md#navbar-and-footer-labels).
+- Sets the translation key for an item's link text.
+  Used for [localization](../content/localization/localize-labels.md#localize-user-defined-ui-elements).
 
 ---
 
@@ -124,7 +136,28 @@ The default footer included in `@redocly/theme` can be configured using the opti
 
 - icon
 - string or [srcSet](#icon-object)
-- Path to icon image file. Shown on left side of the entry.
+- Either:
+  - A [Font Awesome](https://fontawesome.com/icons) icon name.
+    Realm has the following icon packs built in: Classic Regular, Classic Solid, Duotone Solid, and Classic Brands.
+    The icons automatically adjust their colors when users change the color mode.
+
+    To add an icon from the Classic Regular pack, you can provide the icon name only or prefix the name with `regular`.
+    To add an icon from other built-in packs, prefix the icon name with: `solid` (for Classic Solid), `duotone` (for Duotone Solid), or `brands` (for Classic Brands).
+
+    **Examples:** `book`, `duotone book`, `brands github`
+
+    Using other prefixes, including the `fa-` prefix, causes the icon to not render.
+  - Relative path to an icon image file.
+
+    **Example:** `./images/config-icon.svg`
+
+---
+
+- additionalProps
+- object
+- Additional properties for the footer item.
+  Pass arbitrary data that can be accessed in custom theme components.
+  To learn how to customize theme components, see: [Eject components](../customization/eject-components/index.md).
 
 {% /table %}
 
@@ -140,7 +173,8 @@ The default footer included in `@redocly/theme` can be configured using the opti
 
 - srcSet
 - string
-- Comma-separated list of icon file paths and corresponding color modes. When configured, the icon changes when the user switches between color modes.
+- Comma-separated list of icon file paths and corresponding color modes.
+  When configured, the icon changes when the user switches between color modes.
 
 {% /table %}
 
@@ -148,62 +182,164 @@ The default footer included in `@redocly/theme` can be configured using the opti
 
 ## Examples
 
-The columns of the footer are configured using the `items` property, where each entry is a [Group](#group-object) or [Item](#item-object) object, as in the following example:
+### Simple footer
+
+A basic footer with copyright text and a few links:
 
 ```yaml {% title="redocly.yaml" %}
 footer:
-  copyrightText: Example Company © 2024
+  copyrightText: "© 2024 Example Company. All rights reserved."
   items:
-    # Column 1
-    - page: example/privacy-policy.md
-      label: Example Privacy Policy
-    # Column 2
-    - group: About Us
+    - page: privacy-policy.md
+      label: Privacy Policy
+    - page: terms-of-service.md
+      label: Terms of Service
+    - href: "https://support.example.com"
+      label: Support
+      external: true
+```
+
+### Complete footer setup
+
+The columns of the footer are configured using the `items` property, where each entry is a [Group](#group-object) or [Item](#item-object) object.
+The following example shows a comprehensive footer with multiple sections, localization support, and various link types:
+
+```yaml {% title="redocly.yaml" %}
+footer:
+  copyrightText: "© 2024 Example Company. All rights reserved."
+  items:
+    # Column 1: Documentation
+    - group: Documentation
+      groupTranslationKey: footer.docs
+      items:
+        - page: docs/getting-started.md
+          label: Getting Started
+          labelTranslationKey: footer.getting-started
+        - page: docs/guides/index.md
+          label: Guides
+        - page: api-reference.yaml
+          label: API Reference
+    # Column 2: Company
+    - group: Company
+      groupTranslationKey: footer.company
       items:
         - page: company/about-us.md
           label: About Us
         - href: "https://example.com/careers"
-          label: Join our team
-```
-
-Each entry in the footer's `items` configures a distinct column. Using groups is a common approach.
-
-The following configuration shows a more complex footer example with multiple groups, external links and an icon:
-
-```yaml
-footer:
-  copyrightText: Copyright © Redocly 2024.
-  items:
-    - group: Services
-      items:
-        - page: services/gift-shop.md
-          label: Gift Shop
-          icon:
-            srcSet: "./images/gift-shop-red.svg light, ./images/gift-shop-blue.svg dark"
-        - page: services/cafeteria.md
-          label: Cafeteria
+          label: Careers
+          external: true
+        - href: "https://blog.example.com"
+          label: Blog
+          external: true
+    # Column 3: Legal & Support
     - group: Legal
       items:
-        - label: Privacy Notice
-          href: 'https://example.com/museum-privacy-policy/'
-        - label: Exhibit Policy
-          href: 'https://example.com/museum-exhibit-policy/'
+        - page: legal/privacy-policy.md
+          label: Privacy Policy
+        - page: legal/terms-of-service.md
+          label: Terms of Service
+        - href: "https://support.example.com"
+          label: Support Center
+          external: true
+    # Column 4: Social Media
+    - group: Connect
+      items:
+        - label: GitHub
+          href: 'https://github.com/example'
+          external: true
+          icon: brands github
+        - label: Twitter
+          href: 'https://twitter.com/example'
+          external: true
+          icon: brands twitter
+        - label: LinkedIn
+          href: 'https://linkedin.com/company/example'
+          external: true
+          icon: brands linkedin
+```
+
+Each entry in the footer's `items` configures a distinct column.
+Using groups is a common approach for organizing related links.
+
+### Footer with icons and color modes
+
+The following configuration shows a footer with icons that change based on the current color mode:
+
+```yaml {% title="redocly.yaml" %}
+footer:
+  copyrightText: "© 2024 Redocly. All rights reserved."
+  items:
+    - group: Products
+      items:
+        - page: products/platform.md
+          label: Platform
+          icon:
+            srcSet: "./images/platform-red.svg light, ./images/platform-blue.svg dark"
+        - page: products/cli.md
+          label: CLI
+          icon:
+            srcSet: "./images/cli-red.svg light, ./images/cli-blue.svg dark"
+    - group: Resources
+      items:
+        - label: Documentation
+          href: 'https://redocly.com/docs'
+          external: true
+        - label: Community
+          href: 'https://community.redocly.com'
+          external: true
     - group: Social
       items:
-        - label: Facebook
-          href: 'https://facebook.com'
-        - label: Youtube
-          href: 'https://youtube.com'
+        - label: GitHub
+          href: 'https://github.com/redocly'
+          external: true
         - label: Twitter
-          href: 'https://twitter.com'
+          href: 'https://twitter.com/redocly'
+          external: true
+```
+
+### Hide footer
+
+To hide the footer globally or on specific pages:
+
+```yaml {% title="redocly.yaml" %}
+# Hide footer on all pages
+footer:
+  hide: true
+```
+
+Or in page front matter:
+```yaml
+---
+footer:
+  hide: true
+---
 ```
 
 By grouping the links, users can quickly locate the section and content they are looking for.
 
-## Related resources
+### Additional properties
 
-- [Configure navbar](./navbar.md) - Configuration reference for the navigation bar.
-- [Sidebar configuration](../author/reference/sidebars.md) - Configuration reference for the sidebar.
-- [Add custom CSS styles](../style/how-to/customize-styles.md) - Add custom styling that can be applied to your footer.
-- Use [front matter](./front-matter-config.md) to show or hide the footer on individual pages.
-- Explore other [configuration options](./index.md) for your project.
+Use `additionalProps` to add custom data to footer items:
+
+```yaml {% title="redocly.yaml" %}
+footer:
+  copyrightText: "© 2024 Example Company. All rights reserved."
+  items:
+    - group: Documentation
+      items:
+        - page: docs/getting-started.md
+          label: Getting Started
+          additionalProps:
+            category: tutorial
+```
+
+Custom theme components can access these properties to display additional information or implement custom behavior.
+
+## Resources
+
+- **[Navigation elements](../navigation/index.md)** - Overview of all navigation components and patterns for comprehensive site navigation design
+- **[Navbar configuration](./navbar.md)** - Configure the top navigation bar to complement your footer design and provide consistent site navigation
+- **[Sidebar configuration](../navigation/sidebars.md)** - Configure the left navigation panel for comprehensive documentation navigation structure
+- **[Custom CSS styles](../branding/customize-styles.md)** - Add custom styling that can be applied to your footer for brand consistency and visual appeal
+- **[Front matter configuration](./front-matter-config.md)** - Use front matter to show or hide the footer on individual pages for flexible content presentation
+- **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation customization

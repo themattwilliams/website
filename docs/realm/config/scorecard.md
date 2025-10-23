@@ -6,10 +6,13 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: Add and create sets of rules and test your API description files against them.
 ---
 # `scorecard`
 
-Reunite's scorecard feature enables you to add and create sets of rules and test your API description files against them.
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
+
+{% $frontmatter.description %}
 Using these rules you can maintain quality across your existing APIs and ensure that newly-added or updated APIs match your criteria.
 An API scorecard can include multiple sets of rules, corresponding to different quality levels.
 
@@ -43,6 +46,13 @@ An API scorecard can include multiple sets of rules, corresponding to different 
 - ignore
 - [string]
 - Provide a list of files or directories to skip when calculating scorecard.
+
+---
+
+- fromProjectUrl
+- [string]
+- **VS Code extension only.** Validates your local OpenAPI files against scorecard rules defined in your Reunite project.
+  You can get the URL by opening your project in Reunite and copying the full URL from the browser.
 {% /table %}
 
 ### Level Object
@@ -63,7 +73,8 @@ An API scorecard can include multiple sets of rules, corresponding to different 
 
 - extends
 - [string]
-- Inherit configurations. In case of conflict, priority goes to configurations further down the list.
+- Inherit configurations.
+  In case of conflict, priority goes to configurations further down the list.
   Finally, explicit declarations inline takes precedence over configurations inherited through the extends feature.
   Built-in configurations include recommended and minimal.
 
@@ -71,7 +82,8 @@ An API scorecard can include multiple sets of rules, corresponding to different 
 
 - rules
 - [Rule Object](https://redocly.com/docs/cli/configuration/rules)
-- Change the severity level of any rules in your extended configurations. Some rules may also receive additional configurations.
+- Change the severity level of any rules in your extended configurations.
+  Some rules may also receive additional configurations.
 
 {% /table %}
 
@@ -98,7 +110,8 @@ An API scorecard can include multiple sets of rules, corresponding to different 
 ---
 - rules
 - [Rule Object](https://redocly.com/docs/cli/configuration/rules)
-- Customize rules for the target. Useful for disabling rules based on the metadata.
+- Customize rules for the target.
+  Useful for disabling rules based on the metadata.
 
 {% /table %}
 
@@ -130,7 +143,8 @@ An API scorecard can include multiple sets of rules, corresponding to different 
 
 - _(name of metadata key)_
 - string
-- Specify the exact value of the metadata key to match against. Also supports ISO 8601 date range.
+- Specify the exact value of the metadata key to match against.
+  Also supports ISO 8601 date range.
   Specify a string with a leading and trailing slash to match against a regex.
 
 {% /table %}
@@ -317,12 +331,16 @@ scorecard:
     - "**/*.yaml"
 ```
 
-## Related options
-
-- Check out the different ways you can customize the behavior and appearance of integrated API documentation on the [OpenAPI reference](./openapi/index.md) page.
-- Learn more about the different ways you can configure an API catalog, using the [Catalog reference](./catalog-classic.md).
+### fromProjectUrl example
+To enable the [Redocly OpenAPI VS Code extension](https://marketplace.visualstudio.com/items?itemName=Redocly.openapi-vs-code) to validate your local API descriptions against remote scorecard rules:
+```yaml
+scorecard:
+  fromProjectUrl: https://app.cloud.redocly.com/org/my-org/project/my-project
+```
 
 ## Resources
 
-- Learn more about the [Scorecard](../setup/concepts/scorecard.md) feature including what it displays and where to find the reports.
-- Learn how to add either Redocly built-in rule sets or custom rule sets to the scorecard for your projects in [Configure scorecard](../setup/how-to/configure-scorecard.md).
+- **[Scorecard feature overview](../reunite/project/scorecard.md)** - Understand what scorecards display, how to access reports, and their role in API quality management
+- **[Configure scorecard](../reunite/project/configure-scorecard.md)** - Add Redocly built-in or custom rulesets to scorecards for comprehensive API quality assessment and tracking
+- **[OpenAPI reference](./openapi/index.md)** - Customize the behavior and appearance of integrated API documentation for comprehensive scorecard integration
+- **[Catalog reference](./catalog-classic.md)** - Configure an API catalog with different customization options for effective scorecard management

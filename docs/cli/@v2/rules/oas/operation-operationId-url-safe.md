@@ -1,5 +1,5 @@
 ---
-slug: /docs/cli/v2/rules/oas/operation-operationId-url-safe
+slug: /docs/cli/rules/oas/operation-operationId-url-safe
 ---
 
 # operation-operationId-url-safe
@@ -11,6 +11,7 @@ Requires the `operationId` value to be URL safe.
 | 2.0 | ✅            |
 | 3.0 | ✅            |
 | 3.1 | ✅            |
+| 3.2 | ✅            |
 
 ## API design principles
 

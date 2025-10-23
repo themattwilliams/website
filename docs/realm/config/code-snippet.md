@@ -8,9 +8,13 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: Configure which control UI elements are available for code snippets.
 ---
 # `codeSnippet`
 
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
+
+{% $frontmatter.description %}
 Code snippets are small sections of code you can include in your Markdown and OpenAPI documents.
 In Markdown code snippets are formatted by wrapping the text in two sets of three backticks, placed at the start and end of the text block.
 
@@ -29,7 +33,11 @@ Markdown code snippets include a report and copy icon in the top right corner.
 In OpenAPI reference documentation, code snippets are generated based on the information in the description.
 The following is an example of a request and response code snippet in OpenAPI reference documentation:
 
-![Screenshot of a request and response in OpenAPI reference documentation](./images/openapi-code-snippet.png)
+{% img
+  src="./images/openapi-code-snippet.png"
+  alt="Screenshot of a request and response in OpenAPI reference documentation"
+  withLightbox=true
+/%}
 
 OpenAPI reference documentation code snippets include report, copy, and expand and collapse icons in the top right corner.
 
@@ -50,7 +58,9 @@ You can also configure the report element's tooltip and dialog label text.
 
 - elementFormat
 - string
-- A value that specifies the style for the control icons. Possible values: `icon`, `text`. Default: `icon`
+- A value that specifies the style for the control icons.
+  Possible values: `icon`, `text`.
+  Default: `icon`
 
 ---
 
@@ -121,13 +131,15 @@ When users click the report button or text, they are provided a comment feedback
 
 - label
 - string
-- Label inside the report dialog form. Default value: `What is wrong with the code?`.
+- Label inside the report dialog form.
+  Default value: `What is wrong with the code?`.
 
 ---
 
 - tooltipText
 - string
-- Text of the tooltip of the report button. Default value: `Report a problem`.
+- Text of the tooltip of the report button.
+  Default value: `Report a problem`.
 
 {% /table %}
 
@@ -169,11 +181,39 @@ Users can use collapse button to hide all the nested properties inside a JSON ob
 
 {% /table %}
 
+## Configuration scope
+
+Configure code snippets globally in your `redocly.yaml` file or for individual pages using front matter.
+
+### Global configuration
+
+Configuration added to the `redocly.yaml` file applies to all Markdown and API reference pages:
+
+```yaml
+codeSnippet:
+  elementFormat: text
+  report:
+    label: Please tell us what is wrong with this code sample.
+    tooltipText: Send feedback about this code sample
+```
+
+### Page-level configuration
+
+Configure code snippets for individual pages in the front matter. Front matter configurations take precedence over global settings:
+
+```yaml
+---
+codeSnippet:
+  report:
+    label: What is wrong with this code sample?
+---
+```
+
 ## Examples
 
-### Copy button
+### Hide or customize icons
 
-The following is an example configuration for hiding the copy button:
+Hide the copy button:
 
 ```yaml
 codeSnippet:
@@ -181,19 +221,41 @@ codeSnippet:
     hide: true
 ```
 
-### Report button
+Display all icons as text instead of icons:
 
-The following is an example configuration for enabling the report button with specific settings:
+```yaml
+codeSnippet:
+  elementFormat: text
+```
+
+Hide all icons:
+
+```yaml
+codeSnippet:
+  copy:
+    hide: true
+  report:
+    hide: true
+  expand:
+    hide: true
+  collapse:
+    hide: true
+```
+
+### Configure report feedback
+
+Enable the report button with custom label and tooltip:
 
 ```yaml
 codeSnippet:
   report:
-    label: Report wrong code
+    label: Please tell us what is wrong with this code sample.
+    tooltipText: Send feedback about this code sample
 ```
 
-### Expand and collapse buttons
+### Hide expand and collapse buttons
 
-The following is an example configuration for hiding the expand and collapse buttons on JSON objects that are included as a sample requests or responses in OpenAPI definitions:
+Hide the expand and collapse buttons on JSON objects in OpenAPI reference documentation:
 
 ```yaml
 codeSnippet:
@@ -203,15 +265,14 @@ codeSnippet:
     hide: true
 ```
 
-## Customizing labels and tooltips
+## Customize labels and tooltips
 
-Translation keys provide customization options for code snippet control texts. For complete details, refer to the [Translation Keys Reference](../author/reference/translation-keys.md).
+Translation keys provide customization options for code snippet control texts.
+For complete details, refer to the [Translation Keys Reference](../content/localization/translation-keys.md).
 
 ## Resources
 
-- Use the [codeSnippet Markdoc tag](https://redocly.com/docs/learn-markdoc/tags/code-snippet) to display code snippets loaded from local files.
-- To configure the feedback mechanism that appears on all pages in your project by default, see the [`feedback`](./feedback.md) reference documentation.
-- Follow step-by-step instructions for configuring code snippets in the [Configure code snippets](../author/how-to/configure-code-snippets.md) how-to documentation.
-- Learn more about the report feedback mechanism that is included in all code snippets by default, see the [Feedback](../setup/concepts/feedback.md) concept documentation.
-- Use [front matter](./front-matter-config.md) to configure code snippets on individual pages.
-- Explore other [configuration options](./index.md) for your project.
+- **[Code-snippet Markdoc tag](../content/markdoc-tags/code-snippet.md)** - Display code snippets loaded from local files with syntax highlighting and interactive features
+- **[Feedback configuration](./feedback.md)** - Configure the feedback mechanism that appears on all pages and code snippets for user input collection
+- **[Front matter configuration](./front-matter-config.md)** - Configure code snippet behavior and appearance on individual pages using front matter settings
+- **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization

@@ -8,7 +8,8 @@ plans:
 ---
 # `asyncapi`
 
-Customize the behavior and appearance of AsyncAPI documentation. Requires an AsyncAPI definition.
+Customize the behavior and appearance of AsyncAPI documentation.
+Requires an AsyncAPI definition.
 
 ## Options
 
@@ -21,37 +22,38 @@ Customize the behavior and appearance of AsyncAPI documentation. Requires an Asy
 ---
 
 - schemaId
-- String
-- Schema ID. Defaults to `asyncapi`.
+- string
+- Schema ID.
+  Defaults to `asyncapi`.
 
 ---
 
 - hideInfo
-- Boolean
+- boolean
 - Set to `true` to hide info section including API title.
 
 ---
 
 - hideOperations
-- Boolean
+- boolean
 - Set to `true` to hide Operations section
 
 ---
 
 - hideServers
-- Boolean
+- boolean
 - Set to `true` to hide Servers section
 
 ---
 
 - hideMessages
-- Boolean
+- boolean
 - Set to `true` to hide Messages section
 
 ---
 
 - hideSchemas
-- Boolean
+- boolean
 - Set to `true` to hide Schemas section
 
 {% /table %}
@@ -87,4 +89,4 @@ asyncapi:
 
 ## Resources
 
-- Learn more about the [AsyncAPI docs plugin](../setup/reference/plugins/docs/asyncapi.md).
+- **[Supported AsyncAPI extensions](../content/api-docs/asyncapi-extensions/index.md)** - Complete list of all AsyncAPI extensions supported by Redocly for enhanced API documentation

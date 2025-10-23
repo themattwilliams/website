@@ -1,5 +1,5 @@
 ---
-slug: /docs/cli/v2/rules/oas/no-identical-paths
+slug: /docs/cli/rules/oas/no-identical-paths
 ---
 
 # no-identical-paths
@@ -11,6 +11,7 @@ Ensures there are no identical paths in your API descriptions even when they hav
 | 2.0 | ✅            |
 | 3.0 | ✅            |
 | 3.1 | ✅            |
+| 3.2 | ✅            |
 
 According to the OpenAPI specification:
 

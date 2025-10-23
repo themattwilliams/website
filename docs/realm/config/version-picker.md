@@ -8,10 +8,16 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: Configure the visibility of the version picker in your project.
 ---
 # `versionPicker`
 
-If you have multiple versions of content, you can organize that content into versioned folders (folder names must start with `@`) and that content is displayed with a version picker UI element that users can use to select the version.
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
+
+{% $frontmatter.description %}
+If you have multiple versions of content, you can organize that content into versioned folders.
+Versioned folders' names must start with `@`.
+Their content is displayed with a version picker UI element that enables users to switch between versions.
 You can also add a `versions.yaml` file to set the default version and specify which versions should display.
 
 The `versionPicker` configuration option allows you to hide the version picker or include the version picker even on content that does not have multiple versions.
@@ -56,15 +62,10 @@ versionPicker:
   showForUnversioned: true
 ```
 
-## Related options
-
-- Configure a product picker for multiple products using the [products](./products.md) configuration reference documentation.
-- See the options for adding a language picker to your project in the [l10n](./l10n.md) configuration reference documentation.
-
 ## Resources
 
-- Learn how to configure your `versions.yaml` file to specify the default version to display in [Add multiple versions](../author/how-to/versions.md).
-- Find out how to organize your project if you have multiple products in [Add multiple projects](../author/how-to/multiple-products.md).
-- Add a language picker if you have your content translated into multiple languages by [localizing your project](../author/how-to/config-l10n/index.md).
-- Use [front matter](./front-matter-config.md) to toggle the visibility of the version picker on individual pages.
-- Explore other [configuration options](./index.md) for your project.
+- **[Add multiple versions](../content/versions.md)** - Configure your versions.yaml file to specify the default version and manage multiple documentation versions
+- **[Products configuration](./products.md)** - Organize your project with multiple products and version management for complex documentation structures
+- **[Configure localization](./l10n.md)** - Add a language picker for content translated into multiple languages alongside version management
+- **[Front matter configuration](./front-matter-config.md)** - Toggle version picker visibility on individual pages using front matter for custom layouts
+- **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization

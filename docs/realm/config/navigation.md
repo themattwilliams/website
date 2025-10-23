@@ -8,8 +8,11 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: Control the Previous and Next navigation buttons on project pages.
 ---
 # `navigation`
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Control the **Previous** and **Next** navigation buttons on project pages.
 
@@ -35,6 +38,15 @@ Control the **Previous** and **Next** navigation buttons on project pages.
 - [PageLink object](#pagelink-object)
 - Controls the previous page button.
 
+---
+
+- actions
+- [PageAction object](#pageaction-object)
+- Controls the actions that appear on the page.
+  Requires the [`seo.llmstxt` option](./seo.md#llmstxt-object) to be enabled.
+
+---
+
 {% /table %}
 
 ### PageLink object
@@ -49,13 +61,15 @@ Control the **Previous** and **Next** navigation buttons on project pages.
 
 - hide
 - boolean
-- Specifies if the navigation link button is hidden. Default `false`.
+- Specifies if the navigation link button is hidden.
+  Default `false`.
 
 ---
 
 - text
 - string
-- Text that appears above the navigation buttons. Default value: `Next page` or `Previous page` respectively.
+- Text that appears above the navigation buttons.
+  Default value: `Next page` or `Previous page` respectively.
 
 {% /table %}
 
@@ -71,13 +85,49 @@ Control the **Previous** and **Next** navigation buttons on project pages.
 
 - label
 - string
-- Text that appears on the button. The default value is the text of the first heading of the target page.
+- Text that appears on the button.
+  The default value is the text of the first heading of the target page.
 
 ---
 
 - page
 - string
 - Path to a Markdown page in the project, or an URL.
+
+{% /table %}
+
+### PageAction object
+
+{% table %}
+
+- Option
+- Type
+- Description
+
+---
+
+- hide
+- boolean
+- Specifies if the page actions are hidden.
+  Default `false`.
+
+---
+
+- items
+- [string]
+- A list of items that appear on the page and their order.
+  Allowed values:
+  - `copy`: copy the page content as Markdown to the clipboard.
+  - `view`: view the page content as Markdown in a new tab.
+  - `chatgpt`: ask ChatGPT about this page.
+    Only available on public pages.
+  - `claude`: ask Claude about this page.
+    Only available on public pages.
+
+  The first item in the list is the default action.
+  By default, all items are shown in the following order: `copy`, `view`, `chatgpt`, `claude`.
+
+---
 
 {% /table %}
 
@@ -93,7 +143,7 @@ navigation:
   nextButton:
     text: "Next chapter"
   previousButton:
-    text: "Previous chapter
+    text: "Previous chapter"
 ```
 
 ### Hide navigation links globally
@@ -127,7 +177,31 @@ navigation:
 ---
 ```
 
+
+### Disable page actions
+
+The following example disables the page actions on all pages of the project.
+
+```yaml
+navigation:
+  actions:
+    hide: true
+```
+
+### Customize page actions
+
+The following example changes the default order of page actions and disables the `claude` action.
+
+```yaml
+navigation:
+  actions:
+    items:
+      - chatgpt
+      - copy
+      - view
+```
+
 ## Resources
 
-- Use [front matter](./front-matter-config.md) to configure navigation button options on individual pages.
-- Explore other [configuration options](./index.md) for your project.
+- **[Front matter configuration](./front-matter-config.md)** - Configure navigation button options on individual pages using front matter for granular control
+- **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization

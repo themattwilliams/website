@@ -1,5 +1,5 @@
 ---
-slug: /docs/cli/rules/oas/no-enum-type-mismatch
+slug: /docs/cli/v1/rules/oas/no-enum-type-mismatch
 ---
 
 # no-enum-type-mismatch
@@ -17,15 +17,15 @@ flowchart TD
 
 Root ==> Paths --> PathItem --> Operation --> Parameter --> Schema
 PathItem --> Parameter
-NamedParameter --> Parameter
+NamedParameters --> Parameter
 Operation --> RequestBody --> MediaType --> Schema
 Operation --> Responses --> MediaType
-NamedSchema --> Schema
+NamedSchemas --> Schema
 Root ==> components
 
 subgraph components
-NamedParameter
-NamedSchema
+NamedParameters
+NamedSchemas
 end
 
 style Schema fill:#codaf9,stroke:#0044d4,stroke-width:5px

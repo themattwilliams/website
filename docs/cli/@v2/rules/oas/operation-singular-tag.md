@@ -1,5 +1,5 @@
 ---
-slug: /docs/cli/v2/rules/oas/operation-singular-tag
+slug: /docs/cli/rules/oas/operation-singular-tag
 ---
 
 # operation-singular-tag
@@ -11,6 +11,7 @@ Disallows multiple tags for an operation.
 | 2.0 | ✅            |
 | 3.0 | ✅            |
 | 3.1 | ✅            |
+| 3.2 | ✅            |
 
 ## API design principles
 

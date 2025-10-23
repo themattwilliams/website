@@ -1,5 +1,5 @@
 ---
-slug: /docs/cli/v2/rules/oas/operation-2xx-response
+slug: /docs/cli/rules/oas/operation-2xx-response
 ---
 
 # operation-2xx-response
@@ -11,6 +11,7 @@ Ensures that every operation in your API document has at least one successful (2
 | 2.0 | ✅            |
 | 3.0 | ✅            |
 | 3.1 | ✅            |
+| 3.2 | ✅            |
 
 ## API design principles
 

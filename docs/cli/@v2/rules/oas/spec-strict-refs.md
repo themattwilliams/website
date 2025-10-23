@@ -1,5 +1,5 @@
 ---
-slug: /docs/cli/v2/rules/oas/spec-strict-refs
+slug: /docs/cli/rules/oas/spec-strict-refs
 ---
 
 # spec-strict-refs
@@ -11,6 +11,7 @@ Checks that `$ref` is only used in the locations permitted by the OpenAPI specif
 | 2.0 | ✅            |
 | 3.0 | ✅            |
 | 3.1 | ✅            |
+| 3.2 | ✅            |
 
 ## API design principles
 

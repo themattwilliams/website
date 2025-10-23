@@ -1,5 +1,5 @@
 ---
-slug: /docs/cli/rules/oas/no-server-trailing-slash
+slug: /docs/cli/v1/rules/oas/no-server-trailing-slash
 ---
 
 # no-server-trailing-slash
@@ -15,7 +15,7 @@ Disallow servers with a trailing slash.
 ```mermaid
 flowchart TD
 
-root ==> ServersList
+Root ==> ServersList
 
 style ServersList fill:#codaf9,stroke:#0044d4,stroke-width:5px
 ```

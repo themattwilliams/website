@@ -1,5 +1,5 @@
 ---
-slug: /docs/cli/v2/rules/oas/paths-kebab-case
+slug: /docs/cli/rules/oas/paths-kebab-case
 ---
 
 # paths-kebab-case
@@ -11,6 +11,7 @@ Require kebab-case in paths instead of camelCase or snake_case.
 | 2.0 | ✅            |
 | 3.0 | ✅            |
 | 3.1 | ✅            |
+| 3.2 | ✅            |
 
 ## API design principles
 
@@ -73,7 +74,6 @@ paths:
 
 ## Related rules
 
-- [path-excludes-patterns](./path-excludes-patterns.md)
 - [paths-segment-plural](./path-segment-plural.md)
 - [configurable rules](../configurable-rules.md)
 

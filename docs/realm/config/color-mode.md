@@ -8,10 +8,13 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: Configure the behavior of the color mode UI control and add more color modes.
 ---
 # `colorMode`
 
-Color mode controls the color mode in the project.
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
+
+{% $frontmatter.description %}
 
 The default theme (`@redocly/theme`) includes two color modes: light mode and dark mode.
 Color modes can be set to a default value, or with the user's operating system preference.
@@ -30,19 +33,22 @@ Color modes can be set to a default value, or with the user's operating system p
 
 - hide
 - boolean
-- Specifies if the color mode selector is hidden. Default `false`.
+- Specifies if the color mode selector is hidden.
+  Default `false`.
 
 ---
 
 - ignoreDetection
 - boolean
-- Specifies if the system color mode detection is ignored. Default `false`.
+- Specifies if the system color mode detection is ignored.
+  Default `false`.
 
 ---
 
 - modes
 - [string]
-- List of possible color mode values. Default to `light` and `dark`.
+- List of possible color mode values.
+  Default to `light` and `dark`.
 
 {% /table %}
 
@@ -80,7 +86,7 @@ colorMode:
 
 Specify the list of available `colorMode` options in the `modes` list.
 You must add a mode to reference it in the modes list.
-Learn how to add a mode by reading the [Custom color modes](../extend/how-to/add-color-mode.md) guide.
+Learn how to add a mode by reading the [Add new color modes](../branding/customize-color-modes.md#add-new-color-modes) section.
 
 ```yaml
 colorMode:
@@ -95,6 +101,6 @@ The first `mode` from the `modes` list applies by default if `ignoreDetection` i
 
 ## Resources
 
-- Add [custom color modes](../extend/how-to/add-color-mode.md).
-- Use [front matter](./front-matter-config.md) to show or hide the color mode switcher on individual pages.
-- Explore other [configuration options](./index.md) for your project.
+- **[Custom color modes](../branding/customize-color-modes.md#add-new-color-modes)** - Add custom color modes beyond light and dark themes for enhanced brand customization
+- **[Front matter configuration](./front-matter-config.md)** - Use front matter to show or hide the color mode switcher on individual pages for custom layouts
+- **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization

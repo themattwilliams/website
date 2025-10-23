@@ -8,10 +8,14 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: Configure glob patterns to apply metadata to specific files or directories.
 ---
 # `metadataGlobs`
 
-Configure glob patterns to apply metadata to specific files or directories. This metadata is used by features like search, catalog, and scorecard for content categorization.
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
+
+{% $frontmatter.description %}
+This metadata is used by features like search, catalog, and scorecard for content categorization.
 
 ## How it works
 
@@ -55,6 +59,6 @@ These categories help organize content in search results.
 
 ## Resources
 
-- [Configure search facets](../extend/how-to/configure-search-facets.md)
-- [Catalog](./catalog-classic.md)
-- [Scorecard](./scorecard.md)
+- **[Configure search](./search.md#using-metadataglobs)** - Use metadataGlobs for enhanced search functionality and content organization
+- **[Catalog configuration](./catalog-classic.md)** - Configure catalogs that leverage metadata patterns for content filtering and organization
+- **[Scorecard configuration](./scorecard.md)** - Configure scorecards that use metadata patterns for targeted content assessment and quality tracking

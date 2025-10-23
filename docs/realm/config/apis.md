@@ -1,4 +1,20 @@
+---
+products:
+  - Realm
+  - Redoc
+  - Revel
+  - Reef
+  - Redocly CLI
+plans:
+  - Community
+  - Pro
+  - Enterprise
+  - Enterprise+
+description: Configure rules and settings for individual APIs in multi-API projects.
+---
 # `apis`
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 ## Introduction
 
@@ -16,7 +32,9 @@ If your project contains multiple APIs, you can use the `apis` configuration sec
 
 - `{name}@{version}`
 - [API object](#api-object)
-- **REQUIRED**. Each API needs a name and optionally a version. Supports alphanumeric characters and underscores.
+- **REQUIRED**.
+  Each API needs a name and optionally a version.
+  Supports alphanumeric characters and underscores.
 
 {% /table %}
 
@@ -32,7 +50,8 @@ If your project contains multiple APIs, you can use the `apis` configuration sec
 
 - root
 - string
-- **REQUIRED**. Path to the root API description file.
+- **REQUIRED**.
+  Path to the root API description file.
 
 ---
 
@@ -50,13 +69,22 @@ If your project contains multiple APIs, you can use the `apis` configuration sec
 
 - preprocessors
 - [Decorators object](./openapi/decorators.md)
-- Preprocessors run before linting, and follow the same structure as decorators. We recommend the use of decorators over preprocessors in most cases.
+- Preprocessors run before linting, and follow the same structure as decorators.
+  We recommend the use of decorators over preprocessors in most cases.
+
+---
+
+- extends
+- [string]
+- Extend an existing configuration sets. Read more about [Extends](./openapi/extends.md).
 
 ---
 
 - output
-- Output file path
-- When running `bundle` without specifying an API, the bundled API description is saved to this location.
+- string
+- Output file path.
+  When running `bundle` without specifying an API, the bundled API description is saved to this location.
+  Example: `docs/api.yaml`.
 
 {% /table %}
 
@@ -68,12 +96,16 @@ The following example shows a simple `redocly.yaml` configuration file with sett
 apis:
   orders@v3:
     root: orders/openapi.yaml
+    extends:
+      - minimal
     rules:
       tags-alphabetical: error
       operation-operationId-unique: error
       spec-strict-refs: error
   newsletter:
     root: newsletter/openapi.yaml
+    extends:
+      - recommended-strict
     rules:
       info-contact: off
       operation-summary: off
@@ -95,8 +127,8 @@ When running `redocly bundle` with this config, the bundled API descriptions are
 
 ## Resources
 
-- [extends](./openapi/extends.md) sets the base ruleset to use.
-- [rules](./rules.md) settings define the linting rules that are used.
-- [decorators](./openapi/decorators.md) offer some transformations for your OpenAPI documents.
-- More information and examples of [per-API configuration](https://redocly.com/docs/cli/configuration/apis).
-- Explore other [configuration options](./index.md) for your project.
+- **[Extends configuration](./openapi/extends.md)** - Set the base ruleset to use for consistent API validation and linting across your documentation
+- **[Rules configuration](./rules.md)** - Define the linting rules that are used for API validation and quality enforcement
+- **[Decorators](./openapi/decorators.md)** - Apply transformations to your OpenAPI documents for enhanced functionality and custom modifications
+- **[Per-API configuration examples](https://redocly.com/docs/cli/configuration/apis)** - Detailed information and examples for configuring individual APIs with specific settings
+- **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization

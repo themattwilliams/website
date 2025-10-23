@@ -1,5 +1,5 @@
 ---
-slug: /docs/cli/rules/oas/info-license-url
+slug: /docs/cli/v1/rules/oas/info-license-url
 ---
 
 # info-license-url
@@ -15,7 +15,7 @@ Requires the license URL in your API descriptions.
 ```mermaid
 flowchart TD
 
-root ==> Info --> License --> url
+Root ==> Info --> License --> url
 
 style url fill:#codaf9,stroke:#0044d4,stroke-width:5px
 ```

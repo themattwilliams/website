@@ -8,10 +8,13 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: Insert custom scripts in the head or body of a page.
 ---
 # `scripts`
 
-To insert custom scripts in the head or body of a page.
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
+
+{% $frontmatter.description %}
 
 ## Options
 
@@ -54,7 +57,8 @@ To insert custom scripts in the head or body of a page.
 
 - inline
 - boolean
-- Inlines the script content into the page. Improves performance for small scripts.
+- Inlines the script content into the page.
+  Improves performance for small scripts.
   Default value: `false`.
 
 ---
@@ -172,5 +176,5 @@ scripts:
 
 ## Resources
 
-- [Configure links](links.md)
-- Explore other [configuration options](./index.md) for your project.
+- **[Configure links](./links.md)** - Configure link behavior and styling to work seamlessly with custom scripts and interactive elements
+- **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization

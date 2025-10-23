@@ -6,7 +6,11 @@ Redocly recommends putting your user in the `Project Administrators` security gr
 _(For example, only the `Project Administrators` security group has the `View subscriptions` and the `Edit subscriptions` permissions enabled [by default](https://learn.microsoft.com/en-us/azure/devops/service-hooks/overview?view=azure-devops#q-what-permissions-do-i-need-to-set-up-a-subscription).
 Redocly needs these permissions to be able to setup service hooks (webhooks) for the Azure project.)_
 
-![Screenshot with Azure user security group for project](./images/azure-devops-user-sg.png)
+{% img
+  src="./images/azure-devops-user-sg.png"
+  alt="Screenshot with Azure user security group for project"
+  withLightbox=true
+/%}
 
 Alternatively, you can put your user in the `Project Contributors` security group and add the `View subscriptions` and the `Edit subscriptions` permissions manually.
 See [Manage permissions with command line tool](https://learn.microsoft.com/en-us/azure/devops/organizations/security/manage-tokens-namespaces?view=azure-devops)
@@ -19,7 +23,8 @@ Redocly uses this access token to establish a connection to your repository.
 
 See [Create a PAT](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?#create-a-pat) in Microsoft Azure DevOps documentation for detailed instructions.
 
-You must select an Organization for this PAT. Do not select **All accessible organizations**.
+You must select an Organization for this PAT.
+Do not select **All accessible organizations**.
 
 Also, the PAT you use must have API scopes defined. You can choose the **Full access** option, or select **Custom defined** and enable the following specific scopes:
 
@@ -27,7 +32,11 @@ Also, the PAT you use must have API scopes defined. You can choose the **Full ac
 
 The following screenshot from Azure DevOps shows the required custom defined scopes:
 
-![Screenshot with Azure scopes](./images/creating-new-pat.png)
+{% img
+  src="./images/creating-new-pat.png"
+  alt="Screenshot with Azure scopes"
+  withLightbox=true
+/%}
 
 Reunite requires:
 
@@ -65,7 +74,7 @@ See [Scopes](https://learn.microsoft.com/en-us/azure/devops/organizations/accoun
 | [Profiles - Get](https://learn.microsoft.com/en-us/rest/api/azure/devops/profile/profiles/get?view=azure-devops-rest-7.1&tabs=HTTP)                                   | OAuth2    | `vso.profile`                       | To get user display name                                      |
 
 > Note:
-* Push and pull Git actions are performed using PAT.
-* Redocly uses `https://dev.azure.com/{organization}/_apis/connectionData` endpoint to verify if the user is authorized.
+- Push and pull Git actions are performed using PAT.
+- Redocly uses `https://dev.azure.com/{organization}/_apis/connectionData` endpoint to verify if the user is authorized.
 
 </details>

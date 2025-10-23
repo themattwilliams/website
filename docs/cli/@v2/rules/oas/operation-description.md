@@ -1,5 +1,5 @@
 ---
-slug: /docs/cli/v2/rules/oas/operation-description
+slug: /docs/cli/rules/oas/operation-description
 ---
 
 # operation-description
@@ -11,6 +11,7 @@ Requires the `description` field for every operation in your API.
 | 2.0 | ✅            |
 | 3.0 | ✅            |
 | 3.1 | ✅            |
+| 3.2 | ✅            |
 
 ## API design principles
 

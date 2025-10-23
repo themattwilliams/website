@@ -1,5 +1,5 @@
 ---
-slug: /docs/cli/v2/rules/common/struct
+slug: /docs/cli/rules/common/struct
 ---
 
 # struct
@@ -11,6 +11,7 @@ Ensures that your API document conforms to structural requirements of [OpenAPI s
 | 2.0 | ✅            |
 | 3.0 | ✅            |
 | 3.1 | ✅            |
+| 3.2 | ✅            |
 
 | AsyncAPI | Compatibility |
 | -------- | ------------- |

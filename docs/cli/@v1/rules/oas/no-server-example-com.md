@@ -1,5 +1,5 @@
 ---
-slug: /docs/cli/rules/oas/no-server-example-com
+slug: /docs/cli/v1/rules/oas/no-server-example-com
 ---
 
 # no-server-example.com
@@ -16,7 +16,7 @@ The rule checks for all URL schemes (`http`, `https`...).
 ```mermaid
 flowchart TD
 
-root ==> ServersList
+Root ==> ServersList
 
 style ServersList fill:#codaf9,stroke:#0044d4,stroke-width:5px
 ```

@@ -1,5 +1,5 @@
 ---
-slug: /docs/cli/v2/rules/oas/scalar-property-missing-example
+slug: /docs/cli/rules/oas/scalar-property-missing-example
 ---
 
 # scalar-property-missing-example
@@ -12,6 +12,7 @@ Scalar properties are any of the following types: `string`, `number`, `null`, `b
 | 2.0 | ✅            |
 | 3.0 | ✅            |
 | 3.1 | ✅            |
+| 3.2 | ✅            |
 
 ## API design principles
 

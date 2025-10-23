@@ -8,10 +8,14 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: Configure custom response headers for your project.
 ---
 # `responseHeaders`
 
-You can configure custom response headers for your project. Custom headers are added to the response header object if requested resource matches a configured pattern.
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
+
+{% $frontmatter.description %}
+Custom headers are added to the response header object if requested resource matches a configured pattern.
 
 ## Options
 
@@ -27,7 +31,8 @@ You can configure custom response headers for your project. Custom headers are a
 
 - _{glob pattern}_
 - [[Header object](#header-object)]
-- **REQUIRED.** A glob pattern used to match requested resource. It can match any assets, routes, or both.
+- **REQUIRED.** A glob pattern used to match requested resource.
+  It can match any assets, routes, or both.
 
 {% /table %}
 
@@ -76,4 +81,4 @@ responseHeaders:
 
 ## Resources
 
-- See how `responseHeaders` is used to [block search indexing](../setup/how-to/block-search-index.md#set-noindex-response-header).
+- **[Block search indexing](./seo.md#block-indexing-with-response-headers)** - Use responseHeaders to control search engine indexing and SEO optimization strategies

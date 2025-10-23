@@ -1,5 +1,5 @@
 ---
-slug: /docs/cli/v2/rules/oas/path-segment-plural
+slug: /docs/cli/rules/oas/path-segment-plural
 ---
 
 # path-segment-plural
@@ -11,6 +11,7 @@ Enforces plural path segments.
 | 2.0 | ✅            |
 | 3.0 | ✅            |
 | 3.1 | ✅            |
+| 3.2 | ✅            |
 
 ## API design principles
 
@@ -89,7 +90,6 @@ paths:
 
 ## Related rules
 
-- [path-excludes-patterns](./path-excludes-patterns.md)
 - [paths-kebab-case](./paths-kebab-case.md)
 - [configurable rules](../configurable-rules.md)
 

@@ -1,5 +1,5 @@
 ---
-slug: /docs/cli/v2/rules/oas/operation-4xx-problem-details-rfc7807
+slug: /docs/cli/rules/oas/operation-4xx-problem-details-rfc7807
 ---
 
 # operation-4xx-problem-details-rfc7807
@@ -11,6 +11,7 @@ Ensures that every operation with (400-499) HTTP response has content-type `appl
 | 2.0 | ❌            |
 | 3.0 | ✅            |
 | 3.1 | ✅            |
+| 3.2 | ✅            |
 
 ## API design principles
 

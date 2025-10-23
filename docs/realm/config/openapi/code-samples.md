@@ -19,19 +19,18 @@ Configure the code samples generated from your OpenAPI description.
 
 {% table %}
 
-* Option
-* Type
-* Description
+- Option
+- Type
+- Description
 
 ---
 
-* languages
-* [[language object](#language-object)]
-*
-  **REQUIRED.**
-  Array of [language](#language-object) objects, one per language.
+- languages
+- [[language object](#language-object)]
+-
+  List of [language](#language-object) objects, one per language.
   The samples are displayed in the order that they are listed.
-  Default array value is:
+  Default value is:
   ```javascript
   [
     { lang: curl },
@@ -50,9 +49,9 @@ Configure the code samples generated from your OpenAPI description.
 
 ---
 
-* skipOptionalParameters
-* boolean
-*
+- skipOptionalParameters
+- boolean
+-
   Excludes optional parameters (cookies, headers, query params) from the generated code samples.
   Defaults to `false`.
 
@@ -62,15 +61,15 @@ Configure the code samples generated from your OpenAPI description.
 
 {% table %}
 
-* Option
-* Type
-* Description
+- Option
+- Type
+- Description
 
 ---
 
-* lang
-* string
-*
+- lang
+- string
+-
   **REQUIRED.**
   Sets the language to create code samples for.
   Supported values: `curl`, `C#`, `C#+Newtonsoft`, `Go`, `Java`, `Java8+Apache`, `JavaScript`, `Node.js`, `PHP`, `Python`, `R`, `Ruby`.
@@ -83,10 +82,11 @@ Configure the code samples generated from your OpenAPI description.
 
 ---
 
-* label
-* string
-*
-  Custom label to use for the generated code sample. In the _Request samples_ section of your reference docs, the code sample tab uses the custom label instead of the default `lang` value.
+- label
+- string
+-
+  Custom label to use for the generated code sample.
+  In the _Request samples_ section of your reference docs, the code sample tab uses the custom label instead of the default `lang` value.
 
 {% /table %}
 
@@ -113,7 +113,7 @@ With this configuration, each endpoint has code samples in these five languages 
 
 ## Resources
 
-- [openapi](./index.md) - Learn more about using `openapi` configuration.
-- [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [OpenAPI visual reference](https://redocly.com/learn/openapi/openapi-visual-reference)
-- Explore other [configuration options](../index.md) for your project.
+- **[OpenAPI configuration](./index.md)** - Complete guide to OpenAPI configuration options for customizing API reference documentation
+- **[OpenAPI Specification](https://spec.openapis.org/oas/latest.html)** - Official OpenAPI Specification documentation for understanding API description standards
+- **[OpenAPI visual reference](https://redocly.com/learn/openapi/openapi-visual-reference)** - Visual guide to OpenAPI specification structure and code sample implementation
+- **[Configuration options](../index.md)** - Explore other project configuration options for comprehensive documentation customization

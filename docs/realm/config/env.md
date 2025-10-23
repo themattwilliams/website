@@ -8,8 +8,11 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: Customize the redocly.yaml configuration for each environment.
 ---
 # `env`
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 The `env` option allows you to customize the `redocly.yaml` configuration based on the current environment.
 You can override the configuration by adding the necessary nested options directly or by creating an environment
@@ -26,7 +29,7 @@ configuration file in the **root** directory and referencing it in the `env` opt
 ---
 
 - preview
-- [[Redocly config](./index.md) or [Reference object](#reference-object)]
+- [[Redocly config](./index.md) | [Reference object](#reference-object)]
 - Configuration for the preview environment.
 
 ---
@@ -34,7 +37,7 @@ configuration file in the **root** directory and referencing it in the `env` opt
 ---
 
 - development
-- [[Redocly config](./index.md) or [Reference object](#reference-object)]
+- [[Redocly config](./index.md) | [Reference object](#reference-object)]
 - Configuration for the development environment.
 
 ---
@@ -42,7 +45,7 @@ configuration file in the **root** directory and referencing it in the `env` opt
 ---
 
 - production
-- [[Redocly config](./index.md) or [Reference object](#reference-object)]
+- [[Redocly config](./index.md) | [Reference object](#reference-object)]
 - Configuration for the production environment.
 
 ---
@@ -105,4 +108,4 @@ navbar:
 
 ## Resources
 
-- Explore other [configuration options](./index.md) for your project.
+- **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization

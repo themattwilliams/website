@@ -1,5 +1,5 @@
 ---
-slug: /docs/cli/v2/rules/oas/path-parameters-defined
+slug: /docs/cli/rules/oas/path-parameters-defined
 ---
 
 # path-parameters-defined
@@ -11,6 +11,7 @@ Requires all path template variables are defined as path parameters.
 | 2.0 | ✅            |
 | 3.0 | ✅            |
 | 3.1 | ✅            |
+| 3.2 | ✅            |
 
 ## API design principles
 
@@ -67,7 +68,6 @@ paths:
 ## Related rules
 
 - [path-declaration-must-exist](./path-declaration-must-exist.md)
-- [path-excludes-patterns](./path-excludes-patterns.md)
 - [configurable rules](../configurable-rules.md)
 
 ## Resources

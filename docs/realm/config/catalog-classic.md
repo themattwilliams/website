@@ -6,13 +6,21 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: |-
+  Organize your content into a catalog that users can filter and search.
+  You can configure multiple catalogs and set the link text, description, and filters.
 ---
 # `catalogClassic`
 
-Organize your content into a catalog that users can filter and search.
-You can configure multiple catalogs and set the link text, description, and filters.
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-![Screenshot of a catalog](../author/concepts/images/catalog.png)
+{% $frontmatter.description %}
+
+{% img
+  src="../content/images/catalog.png"
+  alt="Screenshot of a catalog"
+  withLightbox=true
+/%}
 
 ## Options
 
@@ -25,7 +33,7 @@ You can configure multiple catalogs and set the link text, description, and filt
 ---
 
 - catalogClassic
-- Map of strings to [Catalog Classic](#catalog-object)
+- Map[string, [Catalog Classic](#catalog-classic-object)]
 - **REQUIRED.**
   Map of strings allows for the definition of multiple catalogs.
   Strings represent catalog only in configuration file - they do not appear in published project.
@@ -33,7 +41,7 @@ You can configure multiple catalogs and set the link text, description, and filt
 
 {% /table %}
 
-### Catalog object
+### Catalog classic object
 
 {% table %}
 
@@ -54,6 +62,14 @@ You can configure multiple catalogs and set the link text, description, and filt
 - titleTranslationKey
 - string
 - Page title key used for [localization](./l10n.md).
+
+---
+
+- icon
+- string
+- A [Font Awesome](https://fontawesome.com/icons) or relative path to icon image file.
+  Font Awesome icons can be prefixed with type: `duotone`, `solid`, `regular` or `brands`.
+  Example: `book`, `duotone book`, `./images/config-icon.svg`.
 
 ---
 
@@ -84,13 +100,14 @@ You can configure multiple catalogs and set the link text, description, and filt
 - filters
 - [[Filter](#filter-object)]
 - List of filter configurations which allows for quicker discovery.
-  See [Categories](../author/concepts/categories.md) for more information on how to categorize content for filtering.
+  See [metadata](./metadata.md#catalog-categorization) for more information on how to categorize content for filtering.
 
 ---
 
 - filterValuesCasing
 - string
-- Transform casing of filter values. Possible values: `lowercase`, `uppercase`, `sentence`, `original`.
+- Transform casing of filter values.
+  Possible values: `lowercase`, `uppercase`, `sentence`, `original`.
   Default: `original`.
 
 ---
@@ -149,7 +166,8 @@ You can configure multiple catalogs and set the link text, description, and filt
 
 - valuesMapping
 - string
-- Map filter values to different values. Useful for mapping legacy metadata values to new values.
+- Map filter values to different values.
+  Useful for mapping legacy metadata values to new values.
   Default value: `{}`.
 
 ---
@@ -216,11 +234,24 @@ You can configure multiple catalogs and set the link text, description, and filt
 ---
 
 - includeByMetadata
-- Map of metadata properties to list of string values
-- Restricts what to include in the catalog.
+- Map[string, [string]]
+- Map of metadata properties to list of string values.
+  Restricts what to include in the catalog.
   Example: `{"type": ["openapi"]}`.
 
 {% /table %}
+
+## Catalog classic routing behavior
+
+When users click an item in the catalog, the routing behavior depends on your sidebar configuration:
+
+- **With sidebars.yaml**: The catalog routes to the first item defined in the corresponding `sidebars.yaml` file that links to that catalog item
+- **Without sidebars.yaml**: A sidebar is generated automatically from the files in the directory, and routing goes to the first file
+
+This means clicking an OpenAPI document in the catalog may not navigate directly to the API reference documentation.
+Instead, it navigates to whatever appears first in your sidebar configuration, such as a home page or getting started guide.
+
+To ensure users reach specific content when clicking catalog items, organize your `sidebars.yaml` files so the most important content appears first, or create dedicated landing pages that introduce each API.
 
 {% admonition type="info" %}
 
@@ -240,33 +271,87 @@ See [rbac](./rbac.md) reference documentation for more options and examples.
 
 ## Examples
 
-The following is an example of a catalog configuration.
+### Complete catalog setup
+
+The following example shows a complete catalog configuration including the required `navbar` configuration to make the catalog accessible.
+
+First, organize your API description files into a logical folder structure:
+
+```treeview
+my_project/
+├── apis/
+│   ├── payments/
+│   │   ├── payments-api.yaml
+│   │   └── webhooks-api.yaml
+│   ├── users/
+│   │   └── users-api.yaml
+│   └── analytics/
+│       ├── analytics-api.yaml
+│       ├── index.md
+│       └── getting-started.md
+├── redocly.yaml
+└── sidebars.yaml
+```
+
+Then configure your catalog in `redocly.yaml`:
+
+```yaml {% title="redocly.yaml" %}
+logo:
+  image: ./images/logo.svg
+  altText: Acme Corp
+  link: https://example.com
+
+catalogClassic:
+  business:
+    title: API Catalog
+    description: 'Discover how our APIs can support your business'
+    slug: /apis/
+    items:
+      - directory: ./apis
+        flatten: true
+        includeByMetadata:
+          type: [openapi, graphql]
+    filters:
+      - title: Business Capability
+        property: capability
+        missingCategoryName: Other
+        type: select
+      - title: API Stage
+        property: tags
+        options: [beta, draft, stable]
+        type: checkboxes
+      - title: API Status
+        property: tags
+        options: [deprecated, active]
+        type: checkboxes
+
+navbar:
+  items:
+    - page: /apis/
+      icon: ./images/api-icon.png
+      linkedSidebars:
+        - ./sidebars.yaml
+    - label: Documentation
+      href: https://redocly.com/docs/
+      external: true
+```
+
+### Basic catalog configuration
+
+The following is a minimal catalog configuration:
 
 ```yaml {% title="redocly.yaml" %}
 catalogClassic:
-  acme-catalog:
-    title: Acme API catalog
-    description: 'This is a description of the API Catalog'
+  simple-catalog:
+    title: API catalog
+    description: 'Browse our available APIs'
     slug: /catalog/
-    filters:
-      - title: API Category
-        property: category
-        missingCategoryName: Other
-      - title: Team
-        property: team
-        missingCategoryName: No team
-    # separateVersions: true
-    groupByFirstFilter: true
     items:
       - directory: ./
         flatten: true
         includeByMetadata:
           type: [openapi]
 ```
-
-{% admonition type="info" %}
-To make the catalog accessible by link, you must add the catalog `slug` to the `sidebars.yaml` file or the `navbar` configuration in the `redocly.yaml` file.
-{% /admonition %}
 
 ### `x-metadata` filters in classic catalog
 
@@ -285,14 +370,12 @@ catalogClassic:
         type: select
 ```
 
-## Related options
-
-- View the configuration options available for translating content in the [localization](./l10n.md) reference documentation.
-- See the [navbar](./navbar.md) configuration documentation to see the format for adding a link to your catalog to the navbar.
-- Use [x-metadata](../author/reference/openapi-extensions/x-metadata.md) to make your API descriptions filterable.
-
 ## Resources
 
-- Learn how to add a catalog in the [Add a catalog](../author/how-to/add-catalog.md) how-to documentation.
-- When an API description contains metadata, and you want to exclude the metadata from the API reference documentation, use the [hideInfoMetadata](./openapi/hide-info-metadata.md) configuration option.
-- Follow steps to [configure navigation on the navbar](../author/how-to/configure-nav/navbar.md) to include your catalog link.
+- **[Sidebars configuration](../navigation/sidebars.md)** - Configure sidebar navigation structure to control how catalog items route when clicked by users
+- **[x-metadata extension](../content/api-docs/openapi-extensions/x-metadata.md)** - Add metadata to OpenAPI files that can be used as catalog filters and displayed in API documentation
+- **[Hide info metadata](./openapi/hide-info-metadata.md)** - Exclude metadata from API reference documentation when you want cleaner, focused documentation presentation
+- **[API Governance](https://redocly.com/docs/cli/api-standards)** - Learn about API standards and governance practices for maintaining quality and consistency
+- **[Configure scorecard](../reunite/project/configure-scorecard.md)** - Set up scorecards to check APIs against standards and maintain quality metrics
+- **[Metadata categorization](./metadata.md#catalog-categorization)** - Use metadata to filter and organize APIs in the classic catalog for better content discovery
+- **[Configure navbar](./navbar.md)** - Follow steps to include your catalog link in the navigation bar for easy access

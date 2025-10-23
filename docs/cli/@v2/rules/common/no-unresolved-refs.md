@@ -1,5 +1,5 @@
 ---
-slug: /docs/cli/v2/rules/oas/no-unresolved-refs
+slug: /docs/cli/rules/oas/no-unresolved-refs
 ---
 
 # no-unresolved-refs
@@ -11,6 +11,7 @@ Ensures that all `$ref` instances in your API descriptions are resolved.
 | 2.0 | ✅            |
 | 3.0 | ✅            |
 | 3.1 | ✅            |
+| 3.2 | ✅            |
 
 | AsyncAPI | Compatibility |
 | -------- | ------------- |

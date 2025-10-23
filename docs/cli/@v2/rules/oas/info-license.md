@@ -1,5 +1,5 @@
 ---
-slug: /docs/cli/v2/rules/oas/info-license
+slug: /docs/cli/rules/oas/info-license
 ---
 
 # info-license
@@ -11,11 +11,12 @@ Requires the license info in your API descriptions.
 | 2.0 | ✅            |
 | 3.0 | ✅            |
 | 3.1 | ✅            |
+| 3.2 | ✅            |
 
 ```mermaid
 flowchart TD
 
-root ==> Info --> License
+Root ==> Info --> License
 
 style License fill:#codaf9,stroke:#0044d4,stroke-width:5px
 ```
@@ -68,7 +69,7 @@ info:
 ## Related rules
 
 - [info-contact](./info-contact.md)
-- [info-license-url](./info-license-url.md)
+- [info-license-strict](./info-license-strict.md)
 
 ## Resources
 

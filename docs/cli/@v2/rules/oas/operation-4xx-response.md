@@ -1,5 +1,5 @@
 ---
-slug: /docs/cli/v2/rules/oas/operation-4xx-response
+slug: /docs/cli/rules/oas/operation-4xx-response
 ---
 
 # operation-4xx-response
@@ -11,6 +11,7 @@ Ensures that every operation in your API document has at least one error (400-49
 | 2.0 | ✅            |
 | 3.0 | ✅            |
 | 3.1 | ✅            |
+| 3.2 | ✅            |
 
 ## API design principles
 

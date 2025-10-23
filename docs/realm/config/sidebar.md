@@ -8,9 +8,13 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: Set the visibility of the sidebar in your project.
 ---
 # `sidebar`
 
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
+
+{% $frontmatter.description %}
 The sidebar is the area on the left of your project that contains navigation.
 The options here allow you to hide it if your site design doesn't require a sidebar.
 
@@ -27,7 +31,7 @@ The options here allow you to hide it if your site design doesn't require a side
 - hide
 - boolean
 - Specifies if the sidebar should be hidden.
-  Default: `false`.
+  Default value: `false`.
 
 {% /table %}
 
@@ -40,16 +44,11 @@ sidebar:
   hide: true
 ```
 
-## Related options
-
-- Configure the [footer](./footer.md)
-- Configure the [navbar](./navbar.md)
-
 ## Resources
 
-For more information about sidebars:
-
-- learn more about [navigation in Redocly projects](../author/concepts/navigation.md)
-- read the article collection on [configuring navigation elements](..//author/how-to/configure-nav/index.md)
-- the [sidebars.yaml reference](../author/reference/sidebars.md) shows the sidebar configuration syntax and examples
+- **[Sidebar configuration guide](../navigation/sidebars.md)** - Complete guide to configuring sidebar navigation structure and content organization for optimal user experience
+- **[Navigation in Redocly projects](../navigation/navigation.md)** - Learn about navigation concepts and implementation strategies for effective site organization
+- **[Navigation elements overview](../navigation/index.md)** - Complete guidance on all navigation components and their configuration for optimal user experience
+- **[Footer configuration](./footer.md)** - Configure footer settings and appearance to complement sidebar design and overall site navigation
+- **[Navbar configuration](./navbar.md)** - Configure navbar settings and navigation elements to work seamlessly with your sidebar configuration
 

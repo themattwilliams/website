@@ -1,5 +1,5 @@
 ---
-slug: /docs/cli/v2/rules/oas/no-duplicated-tag-names
+slug: /docs/cli/rules/oas/no-duplicated-tag-names
 ---
 
 # no-duplicated-tag-names
@@ -12,6 +12,7 @@ This rule prevents duplication of tag names which could lead to inconsistent API
 | 2.0 | ✅            |
 | 3.0 | ✅            |
 | 3.1 | ✅            |
+| 3.2 | ✅            |
 
 ## API design principles
 
@@ -90,7 +91,7 @@ tags:
 
 ## Related rules
 
-- [tag-description](./tag-description.md)
+- [spec-no-invalid-tag-parents](./spec-no-invalid-tag-parents.md)
 
 ## Resources
 

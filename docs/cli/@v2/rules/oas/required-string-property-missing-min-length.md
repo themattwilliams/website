@@ -1,5 +1,5 @@
 ---
-slug: /docs/cli/v2/rules/oas/required-string-property-missing-min-length
+slug: /docs/cli/rules/oas/required-string-property-missing-min-length
 ---
 
 # required-string-property-missing-min-length
@@ -11,6 +11,7 @@ Requires that every required property in the API description with type `string` 
 | 2.0 | ✅            |
 | 3.0 | ✅            |
 | 3.1 | ✅            |
+| 3.2 | ✅            |
 
 ## API design principles
 

@@ -15,22 +15,23 @@ We recommend making the files available but in some situations, you may want to 
 The `hideDownloadButtons` option controls whether the **Download OpenAPI description** section on the info page of the API documentation is hidden.
 
 {% admonition type="warning" %}
-  The `hideDownloadButtons` setting doesn't make your API description private. It only stops the download buttons being visible.
+  The `hideDownloadButtons` setting doesn't make your API description private.
+  It only stops the download buttons being visible.
 {% /admonition %}
 
 ## Options
 
 {% table %}
 
-* Option
-* Type
-* Description
+- Option
+- Type
+- Description
 
 ---
 
-* hideDownloadButtons
-* boolean
-*
+- hideDownloadButtons
+- boolean
+-
   Show or hide the **Download OpenAPI description** section of your API reference info page, which contains download buttons.
   Defaults to `false`.
 
@@ -53,8 +54,8 @@ apis:
 
 ## Resources
 
-- [downloadUrl](./download-urls.md) - Configure the URLs the download buttons point to.
-- [openapi](./index.md) - Learn more about using `openapi` configuration.
-- [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [OpenAPI visual reference](https://redocly.com/learn/openapi/openapi-visual-reference)
-- Explore other [configuration options](../index.md) for your project.
+- **[Download URLs](./download-urls.md)** - Configure the URLs that download buttons point to for customized file access and distribution
+- **[OpenAPI configuration](./index.md)** - Complete guide to OpenAPI configuration options for customizing API reference documentation
+- **[OpenAPI Specification](https://spec.openapis.org/oas/latest.html)** - Official OpenAPI Specification documentation for understanding API description standards
+- **[OpenAPI visual reference](https://redocly.com/learn/openapi/openapi-visual-reference)** - Visual guide to OpenAPI specification structure and download button customization
+- **[Configuration options](../index.md)** - Explore other project configuration options for comprehensive documentation customization

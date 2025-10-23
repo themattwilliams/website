@@ -1,5 +1,5 @@
 ---
-slug: /docs/cli/v2/rules/oas/no-http-verbs-in-paths
+slug: /docs/cli/rules/oas/no-http-verbs-in-paths
 ---
 
 # no-http-verbs-in-paths
@@ -11,6 +11,7 @@ Disallows HTTP verbs used in paths.
 | 2.0 | ✅            |
 | 3.0 | ✅            |
 | 3.1 | ✅            |
+| 3.2 | ✅            |
 
 ```mermaid
 flowchart TD
@@ -120,7 +121,6 @@ This last example wouldn't trigger an error because the casing doesn't split "ge
 ## Related rules
 
 - [configurable rules](../configurable-rules.md)
-- [path-excludes-patterns](./path-excludes-patterns.md)
 
 ## Resources
 

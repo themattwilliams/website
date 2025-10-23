@@ -8,14 +8,17 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: Add custom fonts, stylesheets, and other links to pages.
 ---
 # `links`
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 {% admonition type="warning" %}
 Formerly known as the `stylesheets` option.
 {% /admonition %}
 
-Add custom fonts, stylesheets, and other links to pages.
+{% $frontmatter.description %}
 These links are added to the `<head>` HTML element of each page of your published project.
 The `@theme/styles.css` file is imported automatically.
 
@@ -149,10 +152,7 @@ The example above will produce following link tags:
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" />
 ```
 
-## Related options
-
-- [scripts](./scripts.md)
-
 ## Resources
 
-- [Add custom CSS styles](../style/how-to/customize-styles.md)
+- **[Custom CSS styles](../branding/customize-styles.md)** - Customize link appearance and styling using CSS variables and custom stylesheets for brand consistency
+- **[Scripts configuration](./scripts.md)** - Add custom JavaScript and other scripts to pages for enhanced functionality alongside custom links

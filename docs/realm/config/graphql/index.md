@@ -6,18 +6,24 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: |-
+  Customize the behavior and appearance of integrated GraphQL documentation.
+  Requires a GraphQL schema.
 ---
 # `graphql`
 
-Customize the behavior and appearance of integrated GraphQL documentation. Requires a GraphQL schema.
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
+
+Customize the behavior and appearance of integrated GraphQL documentation.
+Requires a GraphQL schema.
 
 ## Options
 
 {% table %}
 
-* Option
-* Type
-* Description
+- Option
+- Type
+- Description
 
 ---
 
@@ -33,9 +39,9 @@ Customize the behavior and appearance of integrated GraphQL documentation. Requi
 
 ---
 
-* [jsonSamplesDepth](./json-samples-depth.md)
-* number
-* Sets the default expand level for JSON payload samples.
+- [jsonSamplesDepth](./json-samples-depth.md)
+- number
+- Sets the default expand level for JSON payload samples.
 
 ---
 
@@ -45,19 +51,25 @@ Customize the behavior and appearance of integrated GraphQL documentation. Requi
 
 ---
 
-- [hidePaginationButtons](./hide-pagination-buttons.md)
-- boolean
-- Control the pagination buttons visibility of the GraphQL documentation.
-
----
-
 - [feedback](../feedback.md)
 - [Feedback object](../feedback.md#options)
 - Hide or customize the type of or text included in the feedback form that displays at the end of each endpoint.
+
+---
+
+- [showBuiltInScalars](./show-built-in-scalars.md)
+- boolean
+- Show GraphQL built-in scalar types in the navigation and pages.
+
+---
+
+- [showBuiltInDirectives](./show-built-in-directives.md)
+- boolean
+- Show GraphQL built-in directives in the navigation and pages.
 
 {% /table %}
 
 ## Resources
 
-- [GraphQL](https://graphql.org/)
-- [Add GraphQL documentation to your project](../../author/how-to/add-graphql-docs.md)
+- **[GraphQL](https://graphql.org/)** - Official GraphQL specification and documentation for understanding query language fundamentals
+- **[Add GraphQL documentation to your project](../../content/api-docs/add-graphql-docs.md)** - Step-by-step guide to adding GraphQL API documentation to your Redocly project

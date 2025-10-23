@@ -1,5 +1,5 @@
 ---
-slug: /docs/cli/v2/rules/oas/spec-components-invalid-map-name
+slug: /docs/cli/rules/oas/spec-components-invalid-map-name
 ---
 
 # spec-components-invalid-map-name
@@ -11,6 +11,7 @@ Requires that specific objects inside `components` MUST use keys that match the 
 | 2.0 | ❌            |
 | 3.0 | ✅            |
 | 3.1 | ✅            |
+| 3.2 | ✅            |
 
 ```mermaid
 flowchart TD

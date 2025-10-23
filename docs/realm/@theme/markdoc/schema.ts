@@ -1,11 +1,15 @@
-import { FormatImageTag } from './components/FormatImage/FormatImage-markdoc';
-import { ColorModeExampleTag } from './components/ColorModeExample/ColorModeExample-markdoc';
-import { IconTag } from './components/Icon/Icon-markdoc';
+import { IconTag } from './components/ThemeIcon/Icon-markdoc';
+import { ConfigIntroductionTag } from './components/config/Introduction/Introduction-markdoc';
+import { ConfigPropertyTag } from './components/config/Property/Property-markdoc';
+import { ConfigSectionTag } from './components/config/Section/Section-markdoc';
+import { ConfigOptionRequirementsTag } from './components/config/OptionRequirements/OptionRequirements-markdoc';
 
 export const tags = {
-  'format-image': FormatImageTag,
-  'color-mode-image-example': ColorModeExampleTag,
-  icon: IconTag,
+  themeIcon: IconTag,
+  configIntroduction: ConfigIntroductionTag,
+  configSection: ConfigSectionTag,
+  configProperty: ConfigPropertyTag,
+  configOptionRequirements: ConfigOptionRequirementsTag,
 }
 
 export const functions = {
